@@ -1,0 +1,250 @@
+<p-toast></p-toast>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Contactez-nous</h1>
+          <p>Prêt à démarrer votre projet ? Notre équipe est là pour vous accompagner</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-content">
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <p-card>
+              <ng-template pTemplate="title">
+                <h2>Demande de Devis</h2>
+              </ng-template>
+              <ng-template pTemplate="subtitle">
+                Partagez-nous votre projet et recevez un devis personnalisé sous 24h
+              </ng-template>
+              
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="firstName">Prénom *</label>
+                    <input 
+                      pInputText 
+                      id="firstName" 
+                      formControlName="firstName"
+                      [class.ng-invalid]="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched"
+                    />
+                    <small 
+                      class="p-error" 
+                      *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
+                      Le prénom est requis
+                    </small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="lastName">Nom *</label>
+                    <input 
+                      pInputText 
+                      id="lastName" 
+                      formControlName="lastName"
+                      [class.ng-invalid]="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched"
+                    />
+                    <small 
+                      class="p-error" 
+                      *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
+                      Le nom est requis
+                    </small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                      pInputText 
+                      id="email" 
+                      formControlName="email" 
+                      type="email"
+                      [class.ng-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+                    />
+                    <small 
+                      class="p-error" 
+                      *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                      <span *ngIf="contactForm.get('email')?.errors?.['required']">L'email est requis</span>
+                      <span *ngIf="contactForm.get('email')?.errors?.['email']">Format d'email invalide</span>
+                    </small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input 
+                      pInputText 
+                      id="phone" 
+                      formControlName="phone"
+                      placeholder="+221 70 123 45 67"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="company">Entreprise</label>
+                    <input 
+                      pInputText 
+                      id="company" 
+                      formControlName="company"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="service">Service souhaité *</label>
+                    <p-dropdown 
+                      [options]="services" 
+                      formControlName="service" 
+                      placeholder="Sélectionnez un service"
+                      optionLabel="label" 
+                      optionValue="value"
+                      [class.ng-invalid]="contactForm.get('service')?.invalid && contactForm.get('service')?.touched"
+                    ></p-dropdown>
+                    <small 
+                      class="p-error" 
+                      *ngIf="contactForm.get('service')?.invalid && contactForm.get('service')?.touched">
+                      Veuillez sélectionner un service
+                    </small>
+                  </div>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="project">Description du projet *</label>
+                  <textarea 
+                    pInputTextarea 
+                    id="project" 
+                    formControlName="project" 
+                    rows="5"
+                    placeholder="Décrivez votre projet, vos besoins, vos objectifs..."
+                    [class.ng-invalid]="contactForm.get('project')?.invalid && contactForm.get('project')?.touched"
+                  ></textarea>
+                  <small 
+                    class="p-error" 
+                    *ngIf="contactForm.get('project')?.invalid && contactForm.get('project')?.touched">
+                    La description du projet est requise
+                  </small>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="budget">Budget approximatif</label>
+                  <p-dropdown 
+                    [options]="budgetRanges" 
+                    formControlName="budget" 
+                    placeholder="Sélectionnez une fourchette (optionnel)"
+                    optionLabel="label" 
+                    optionValue="value"
+                  ></p-dropdown>
+                </div>
+
+                <div class="form-actions">
+                  <p-button 
+                    type="submit" 
+                    label="Envoyer la demande" 
+                    icon="pi pi-send"
+                    styleClass="p-button-lg"
+                    [disabled]="contactForm.invalid"
+                    [loading]="isSubmitting">
+                  </p-button>
+                </div>
+              </form>
+            </p-card>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="info-cards">
+              <p-card class="info-card">
+                <ng-template pTemplate="title">
+                  <i class="pi pi-phone"></i>
+                  Téléphone
+                </ng-template>
+                <p>+221 70 123 45 67</p>
+                <p>+221 77 987 65 43</p>
+                <small>Lun-Ven: 8h-18h | Sam: 9h-13h</small>
+              </p-card>
+
+              <p-card class="info-card">
+                <ng-template pTemplate="title">
+                  <i class="pi pi-envelope"></i>
+                  Email
+                </ng-template>
+                <p>contact&#64;memkotech.com</p>
+                <p>devis&#64;memkotech.com</p>
+                <small>Réponse sous 24h garantie</small>
+              </p-card>
+
+              <p-card class="info-card">
+                <ng-template pTemplate="title">
+                  <i class="pi pi-map-marker"></i>
+                  Adresse
+                </ng-template>
+                <p>Avenue Cheikh Anta Diop</p>
+                <p>Dakar, Sénégal</p>
+                <small>Rendez-vous sur demande</small>
+              </p-card>
+
+              <p-card class="info-card">
+                <ng-template pTemplate="title">
+                  <i class="pi pi-clock"></i>
+                  Horaires
+                </ng-template>
+                <p>Lundi - Vendredi: 8h - 18h</p>
+                <p>Samedi: 9h - 13h</p>
+                <small>Support 24/7 pour clients premium</small>
+              </p-card>
+            </div>
+
+            <!-- Quick Contact -->
+            <div class="quick-contact">
+              <h3>Besoin d'une réponse rapide ?</h3>
+              <p>Contactez-nous directement par WhatsApp ou planifiez un appel</p>
+              <div class="quick-buttons">
+                <p-button 
+                  label="WhatsApp" 
+                  icon="pi pi-whatsapp"
+                  styleClass="p-button-success"
+                  (click)="openWhatsApp()">
+                </p-button>
+                <p-button 
+                  label="Planifier un appel" 
+                  icon="pi pi-calendar"
+                  styleClass="p-button-outlined">
+                </p-button>
+              </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+              <h3>Questions Fréquentes</h3>
+              <div class="faq-item" *ngFor="let faq of quickFAQ">
+                <h4>{{faq.question}}</h4>
+                <p>{{faq.answer}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+      <div class="container">
+        <div class="section-header">
+          <h2>Comment ça marche ?</h2>
+          <p>Votre projet en 5 étapes simples</p>
+        </div>
+        
+        <div class="process-steps">
+          <div class="step" *ngFor="let step of processSteps; let i = index">
+            <div class="step-number">{{i + 1}}</div>
+            <div class="step-content">
+              <h3>{{step.title}}</h3>
+              <p>{{step.description}}</p>
+              <span class="step-duration">{{step.duration}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,325 @@
+ .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .contact-section {
+      padding: 6rem 2rem;
+      background: #f8f9fa;
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form ::ng-deep .p-card-content {
+      padding: 2rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #2c3e50;
+      font-size: 0.9rem;
+    }
+
+    .form-group ::ng-deep .p-inputtext,
+    .form-group ::ng-deep .p-dropdown,
+    .form-group ::ng-deep .p-inputtextarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 2px solid #e9ecef;
+      transition: all 0.3s ease;
+    }
+
+    .form-group ::ng-deep .p-inputtext:focus,
+    .form-group ::ng-deep .p-dropdown:focus,
+    .form-group ::ng-deep .p-inputtextarea:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .form-group ::ng-deep .ng-invalid:not(.ng-untouched) {
+      border-color: #e74c3c;
+    }
+
+    .p-error {
+      color: #e74c3c;
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
+    }
+
+    .form-actions {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .form-actions ::ng-deep .p-button {
+      padding: 1rem 3rem;
+      font-weight: 600;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+    }
+
+    .form-actions ::ng-deep .p-button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .info-card {
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-card ::ng-deep .p-card-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #2c3e50;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-card ::ng-deep .p-card-title i {
+      color: #667eea;
+      font-size: 1.25rem;
+    }
+
+    .info-card ::ng-deep .p-card-content p {
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .info-card ::ng-deep .p-card-content small {
+      color: #666;
+      font-style: italic;
+    }
+
+    .quick-contact {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .quick-contact h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .quick-contact p {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .quick-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-buttons ::ng-deep .p-button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+
+    .faq-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-section h3 {
+      color: #2c3e50;
+      margin-bottom: 2rem;
+      font-size: 1.25rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-item h4 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .faq-item p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .process {
+      background: white;
+      padding: 6rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .step {
+      text-align: center;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .step:hover {
+      border-color: #667eea;
+      transform: translateY(-5px);
+    }
+
+    .step-number {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 auto 1.5rem;
+    }
+
+    .step-content h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .step-content p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .step-duration {
+      color: #667eea;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-buttons {
+        flex-direction: column;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
