@@ -1,307 +1,426 @@
 .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-    }
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-    .hero p {
-      font-size: 1.25rem;
-      opacity: 0.9;
-    }
+.hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
 
-    .services-overview {
-      padding: 6rem 2rem;
-      background: white;
-    }
+.services-overview {
+  padding: 6rem 2rem;
+  background: white;
+}
 
-    .service-detail {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
+/* ====================================================== */
+/* STYLES POUR LES BOUTONS PERSONNALISÉS MODERNES */
+/* ====================================================== */
 
-    .service-content h2 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
+/* Conteneur des boutons */
+.service-buttons {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0 40px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .service-content p {
-      color: #666;
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
+/* Style principal des boutons */
+.service-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 120px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
-    .technologies {
-      margin-bottom: 2rem;
-    }
+/* Effet au survol */
+.service-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
 
-    .technologies h3 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
+/* État actif (bouton sélectionné) */
+.service-btn.active {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
 
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-    }
+/* États focus pour l'accessibilité */
+.service-btn:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(79, 172, 254, 0.3);
+}
 
-    .tech-item {
-      background: #f8f9fa;
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
+/* Animation des icônes */
+.service-btn i {
+  transition: transform 0.3s ease;
+}
 
-    .tech-item:hover {
-      background: #667eea;
-      color: white;
-      transform: translateY(-3px);
-    }
+.service-btn:hover i,
+.service-btn.active i {
+  transform: scale(1.1);
+}
 
-    .tech-item i {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
+/* Conteneur pour les onglets */
+.service-content-container {
+  margin-top: 2rem;
+}
 
-    .tech-item span {
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
+/* Animation d'apparition du contenu */
+.service-tab-content {
+  animation: fadeIn 0.4s ease-in-out;
+}
 
-    .service-features {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 12px;
-      height: fit-content;
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    .service-features h3 {
-      color: #2c3e50;
-      margin-bottom: 1.5rem;
-      font-size: 1.25rem;
-    }
+/* ====================================================== */
+/* RESTE DU CSS EXISTANT */
+/* ====================================================== */
 
-    .service-features ul {
-      list-style: none;
-      padding: 0;
-    }
+.service-detail {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
 
-    .service-features ul li {
-      color: #666;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+.service-content h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
 
-    .service-features ul li i {
-      color: #27ae60;
-      font-weight: bold;
-    }
+.service-content p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-    .support-levels {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+.technologies {
+  margin-bottom: 2rem;
+}
 
-    .support-level {
-      background: #f8f9fa;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-left: 4px solid #667eea;
-    }
+.technologies h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
 
-    .support-level h4 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
 
-    .support-level ul {
-      list-style: none;
-      padding: 0;
-    }
+.tech-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
 
-    .support-level ul li {
-      color: #666;
-      margin-bottom: 0.5rem;
-      padding-left: 1rem;
-      position: relative;
-    }
+.tech-item:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-3px);
+}
 
-    .support-level ul li::before {
-      content: '•';
-      color: #667eea;
-      position: absolute;
-      left: 0;
-    }
+.tech-item i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
 
-    .process {
-      background: #f8f9fa;
-      padding: 6rem 2rem;
-    }
+.tech-item span {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+.service-features {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  height: fit-content;
+}
 
-    .section-header h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
+.service-features h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
 
-    .section-header p {
-      font-size: 1.2rem;
-      color: #666;
-    }
+.service-features ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
+.service-features ul li {
+  color: #666;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    .step {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      position: relative;
-    }
+.service-features ul li i {
+  color: #27ae60;
+  font-weight: bold;
+}
 
-    .step:hover {
-      transform: translateY(-5px);
-    }
+.support-levels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-    .step-number {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
+.support-level {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
 
-    .step-content h3 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
+.support-level h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
 
-    .step-content p {
-      color: #666;
-      line-height: 1.6;
-    }
+.support-level ul {
+  list-style: none;
+  padding: 0;
+}
 
-    .faq {
-      padding: 6rem 2rem;
-      background: white;
-    }
+.support-level ul li {
+  color: #666;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
 
-    .faq ::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
-      background: #f8f9fa;
-      border: 1px solid #dee2e6;
-      color: #2c3e50;
-      font-weight: 600;
-    }
+.support-level ul li::before {
+  content: '•';
+  color: #667eea;
+  position: absolute;
+  left: 0;
+}
 
-    .faq ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-      background: #667eea;
-      color: white;
-    }
+.process {
+  background: #f8f9fa;
+  padding: 6rem 2rem;
+}
 
-    .faq ::ng-deep .p-accordion .p-accordion-content {
-      background: white;
-      color: #666;
-      padding: 1.5rem;
-      line-height: 1.6;
-    }
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
-    .cta {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-      color: white;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
 
-    .cta-content h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
 
-    .cta-content p {
-      font-size: 1.2rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.9;
-    }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
 
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+.step {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
 
-    .cta-buttons ::ng-deep .p-button {
-      font-weight: 600;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-    }
+.step:hover {
+  transform: translateY(-5px);
+}
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+.step-number {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
 
-      .service-detail {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+.step-content h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
 
-      .tech-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      }
+.step-content p {
+  color: #666;
+  line-height: 1.6;
+}
 
-      .support-levels {
-        grid-template-columns: 1fr;
-      }
+.faq {
+  padding: 6rem 2rem;
+  background: white;
+}
 
-      .process-steps {
-        grid-template-columns: 1fr;
-      }
+.faq ::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #2c3e50;
+  font-weight: 600;
+}
 
-      .cta-content h2 {
-        font-size: 2rem;
-      }
-    }
+.faq ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+  background: #667eea;
+  color: white;
+}
+
+.faq ::ng-deep .p-accordion .p-accordion-content {
+  background: white;
+  color: #666;
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+
+.cta {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons ::ng-deep .p-button {
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+
+/* ====================================================== */
+/* RESPONSIVE DESIGN */
+/* ====================================================== */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Responsive pour les boutons de navigation */
+  .service-buttons {
+    gap: 10px;
+  }
+  
+  .service-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .service-detail {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .support-levels {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Buttons empilés verticalement sur très petits écrans */
+  .service-buttons {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .service-btn {
+    width: 200px;
+  }
+}
+

@@ -9,9 +9,9 @@ import { MenuItem } from 'primeng/api';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    RouterLink, 
-    RouterLinkActive, 
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
     CommonModule,
     ButtonModule,
     MenubarModule
@@ -32,9 +32,9 @@ import { MenuItem } from 'primeng/api';
           <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
         </ul>
         <div class="nav-cta">
-          <p-button 
-            label="Devis gratuit" 
-            icon="pi pi-phone" 
+          <p-button
+            label="Devis gratuit"
+            icon="pi pi-phone"
             styleClass="p-button-outlined"
             routerLink="/contact">
           </p-button>
@@ -69,7 +69,7 @@ import { MenuItem } from 'primeng/api';
         </div>
         <div class="footer-section">
           <h4>Contact</h4>
-          <p><i class="pi pi-phone"></i> +221 70 123 45 67</p>
+          <p><i class="pi pi-phone"></i>+221 78 488 67 52</p>
           <p><i class="pi pi-envelope"></i> contact&#64;memkotech.com</p>
           <p><i class="pi pi-map-marker"></i> Dakar, Sénégal</p>
         </div>

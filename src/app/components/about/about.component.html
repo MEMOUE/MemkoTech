@@ -14,15 +14,15 @@
           <div class="story-text">
             <h2>Notre Histoire</h2>
             <p>
-              Fondée en 2019 à Dakar, MemkoTech est née de la vision de démocratiser l'accès aux technologies 
-              de pointe pour les entreprises sénégalaises et africaines. Nos fondateurs, passionnés par l'innovation 
+              Fondée en 2019 à Dakar, MemkoTech est née de la vision de démocratiser l'accès aux technologies
+              de pointe pour les entreprises sénégalaises et africaines. Nos fondateurs, passionnés par l'innovation
               technologique, ont créé une entreprise axée sur l'excellence et l'accompagnement personnalisé.
             </p>
             <p>
-              Aujourd'hui, nous sommes fiers d'avoir accompagné plus de 150 clients dans leur transformation digitale, 
+              Aujourd'hui, nous sommes fiers d'avoir accompagné plus de 15 clients dans leur transformation digitale,
               des startups locales aux multinationales, en passant par les institutions publiques.
             </p>
-            
+
             <div class="values">
               <div class="value-item">
                 <i class="pi pi-star"></i>
@@ -66,7 +66,7 @@
           <h2>Notre Parcours</h2>
           <p>Les étapes clés de notre développement</p>
         </div>
-        
+
         <p-timeline [value]="timelineEvents" layout="vertical" align="alternate">
           <ng-template pTemplate="content" let-event>
             <p-card>
@@ -81,7 +81,7 @@
               </div>
             </p-card>
           </ng-template>
-          
+
           <ng-template pTemplate="marker" let-event>
             <div class="timeline-marker" [ngClass]="event.color">
               <i [class]="event.icon"></i>
@@ -98,7 +98,7 @@
           <h2>Notre Équipe</h2>
           <p>Des experts passionnés à votre service</p>
         </div>
-        
+
         <div class="team-grid">
           <div class="team-member" *ngFor="let member of teamMembers">
             <div class="member-photo">
@@ -124,11 +124,11 @@
           <div class="mission-text">
             <h2>Notre Mission</h2>
             <p>
-              <strong>Accompagner les entreprises dans leur transformation digitale</strong> en leur fournissant 
+              <strong>Accompagner les entreprises dans leur transformation digitale</strong> en leur fournissant
               des solutions technologiques innovantes, fiables et adaptées à leurs besoins spécifiques.
             </p>
             <p>
-              Nous croyons que la technologie doit être un accélérateur de croissance accessible à tous, 
+              Nous croyons que la technologie doit être un accélérateur de croissance accessible à tous,
               indépendamment de la taille ou du secteur d'activité de l'entreprise.
             </p>
           </div>
@@ -166,7 +166,7 @@
           <h2>Certifications & Partenariats</h2>
           <p>Nos accréditations et partenaires technologiques</p>
         </div>
-        
+
         <div class="cert-grid">
           <div class="cert-item">
             <i class="pi pi-verified"></i>
@@ -209,15 +209,15 @@
           <h2>Rejoignez Nos Clients Satisfaits</h2>
           <p>Découvrez comment nous pouvons transformer votre entreprise</p>
           <div class="cta-buttons">
-            <p-button 
-              label="Nos Services" 
-              icon="pi pi-arrow-right" 
+            <p-button
+              label="Nos Services"
+              icon="pi pi-arrow-right"
               styleClass="p-button-lg"
               routerLink="/services">
             </p-button>
-            <p-button 
-              label="Nous Contacter" 
-              icon="pi pi-phone" 
+            <p-button
+              label="Nous Contacter"
+              icon="pi pi-phone"
               styleClass="p-button-outlined p-button-lg"
               routerLink="/contact">
             </p-button>

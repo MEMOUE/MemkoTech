@@ -18,11 +18,11 @@ export class AboutComponent {
     {
       title: 'Création de MemkoTech',
       date: '2019',
-      description: 'Lancement de l\'entreprise avec une équipe de 3 développeurs passionnés.',
+      description: 'Lancement de l\'entreprise avec un développeur passionnés.',
       icon: 'pi pi-flag',
       color: 'blue',
       stats: [
-        { value: '3', label: 'Fondateurs' },
+        { value: '1', label: 'Fondateurs' },
         { value: '5', label: 'Premiers clients' }
       ]
     },
@@ -34,7 +34,7 @@ export class AboutComponent {
       color: 'green',
       stats: [
         { value: '12', label: 'Employés' },
-        { value: '25', label: 'Projets livrés' }
+        { value: '15', label: 'Projets livrés' }
       ]
     },
     {
@@ -45,7 +45,7 @@ export class AboutComponent {
       color: 'orange',
       stats: [
         { value: '3', label: 'Certifications' },
-        { value: '75', label: 'Clients satisfaits' }
+        { value: '25', label: 'Clients satisfaits' }
       ]
     },
     {
@@ -55,7 +55,7 @@ export class AboutComponent {
       icon: 'pi pi-star',
       color: 'purple',
       stats: [
-        { value: '150+', label: 'Projets réalisés' },
+        { value: '15+', label: 'Projets réalisés' },
         { value: '25', label: 'Membres équipe' }
       ]
     }
@@ -63,9 +63,9 @@ export class AboutComponent {
 
   teamMembers = [
     {
-      name: 'Amadou Diallo',
-      role: 'CEO & Fondateur',
-      bio: 'Visionnaire technologique avec 10+ ans d\'expérience en développement et management.',
+      name: 'Memoué KONE',
+      role: 'Fondateur',
+      bio: 'Visionnaire technologique avec 5+ ans d\'expérience en développement et management.',
       skills: ['Leadership', 'Strategy', 'Full-Stack'],
       icon: 'pi pi-user'
     },
@@ -77,21 +77,21 @@ export class AboutComponent {
       icon: 'pi pi-user'
     },
     {
-      name: 'Ibrahim Kane',
+      name: 'ATE TOUGUE ARISTIDE',
       role: 'Lead Developer',
       bio: 'Développeur senior spécialisé en applications web modernes et mobile.',
       skills: ['React', 'Angular', 'React Native'],
       icon: 'pi pi-user'
     },
     {
-      name: 'Aïssa Ndiaye',
+      name: 'Mohamed El Anewar Abiodoun Attanda ',
       role: 'UI/UX Designer',
       bio: 'Designer créative focalisée sur l\'expérience utilisateur et l\'accessibilité.',
       skills: ['UI/UX', 'Figma', 'Design System'],
       icon: 'pi pi-user'
     },
     {
-      name: 'Moussa Ba',
+      name: 'Mamadou Ba',
       role: 'Project Manager',
       bio: 'Expert en gestion de projets agiles et coordination d\'équipes techniques.',
       skills: ['Agile', 'Scrum', 'Communication'],

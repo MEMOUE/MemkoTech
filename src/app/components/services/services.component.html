@@ -1,347 +1,387 @@
 <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Nos Services</h1>
-          <p>Des solutions technologiques complètes pour propulser votre entreprise vers le futur</p>
-        </div>
-      </div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Nos Services</h1>
+      <p>Des solutions technologiques complètes pour propulser votre entreprise vers le futur</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
-      <div class="container">
-        <p-tabView>
-          <p-tabPanel header="Développement" leftIcon="pi pi-code">
-            <div class="service-detail">
-              <div class="service-content">
-                <h2>Développement Web & Mobile</h2>
-                <p>Nous créons des applications web et mobiles performantes, sécurisées et évolutives en utilisant les technologies les plus récentes.</p>
-                
-                <div class="technologies">
-                  <h3>Technologies Web</h3>
-                  <div class="tech-grid">
-                    <div class="tech-item">
-                      <i class="pi pi-tablet"></i>
-                      <span>React.js</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-tablet"></i>
-                      <span>Angular</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-tablet"></i>
-                      <span>Vue.js</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>Node.js</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>java</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>Python</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>PHP</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>Go</span>
-                    </div>
-                  </div>
+<!-- Services Overview -->
+<section class="services-overview">
+  <div class="container">
+    
+    <!-- Boutons de navigation personnalisés -->
+    <div class="service-buttons">
+      <button 
+        class="service-btn" 
+        [class.active]="activeTab === 'development'"
+        (click)="setActiveTab('development')">
+        <i class="pi pi-code"></i>
+        Développement
+      </button>
+      <button 
+        class="service-btn" 
+        [class.active]="activeTab === 'infrastructure'"
+        (click)="setActiveTab('infrastructure')">
+        <i class="pi pi-cloud"></i>
+        Infrastructure
+      </button>
+      <button 
+        class="service-btn" 
+        [class.active]="activeTab === 'security'"
+        (click)="setActiveTab('security')">
+        <i class="pi pi-shield"></i>
+        Sécurité
+      </button>
+      <button 
+        class="service-btn" 
+        [class.active]="activeTab === 'maintenance'"
+        (click)="setActiveTab('maintenance')">
+        <i class="pi pi-cog"></i>
+        Maintenance
+      </button>
+    </div>
+
+    <!-- Contenu des onglets -->
+    <div class="service-content-container">
+      
+      <!-- Développement -->
+      <div class="service-tab-content" *ngIf="activeTab === 'development'">
+        <div class="service-detail">
+          <div class="service-content">
+            <h2>Développement Web & Mobile</h2>
+            <p>Nous créons des applications web et mobiles performantes, sécurisées et évolutives en utilisant les technologies les plus récentes.</p>
+            
+            <div class="technologies">
+              <h3>Technologies Web</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <i class="pi pi-tablet"></i>
+                  <span>React.js</span>
                 </div>
-
-                <div class="technologies">
-                  <h3>Technologies Mobile</h3>
-                  <div class="tech-grid">
-                    <div class="tech-item">
-                      <i class="pi pi-mobile"></i>
-                      <span>React Native</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-mobile"></i>
-                      <span>Flutter</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-apple"></i>
-                      <span>iOS Native</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-android"></i>
-                      <span>Android Native</span>
-                    </div>
-                  </div>
+                <div class="tech-item">
+                  <i class="pi pi-tablet"></i>
+                  <span>Angular</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-tablet"></i>
+                  <span>Vue.js</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>Java</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>Python</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>PHP</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>Go</span>
                 </div>
               </div>
-              <div class="service-features">
-                <h3>Ce que nous offrons</h3>
+            </div>
+
+            <div class="technologies">
+              <h3>Technologies Mobile</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <i class="pi pi-mobile"></i>
+                  <span>React Native</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-mobile"></i>
+                  <span>Flutter</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-apple"></i>
+                  <span>iOS Native</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-android"></i>
+                  <span>Android Native</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-features">
+            <h3>Ce que nous offrons</h3>
+            <ul>
+              <li><i class="pi pi-check"></i> Applications web responsives</li>
+              <li><i class="pi pi-check"></i> E-commerce & marketplaces</li>
+              <li><i class="pi pi-check"></i> Applications métier (ERP, CRM)</li>
+              <li><i class="pi pi-check"></i> Applications mobiles cross-platform</li>
+              <li><i class="pi pi-check"></i> PWA (Progressive Web Apps)</li>
+              <li><i class="pi pi-check"></i> API & services web</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastructure -->
+      <div class="service-tab-content" *ngIf="activeTab === 'infrastructure'">
+        <div class="service-detail">
+          <div class="service-content">
+            <h2>Infrastructure & Cloud</h2>
+            <p>Conception, déploiement et gestion d'infrastructures cloud modernes, sécurisées et scalables pour votre entreprise.</p>
+            
+            <div class="technologies">
+              <h3>Plateformes Cloud</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <i class="pi pi-cloud"></i>
+                  <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-cloud"></i>
+                  <span>Microsoft Azure</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-cloud"></i>
+                  <span>Google Cloud</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-server"></i>
+                  <span>Kubernetes</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-cog"></i>
+                  <span>Terraform</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-features">
+            <h3>Services Cloud</h3>
+            <ul>
+              <li><i class="pi pi-check"></i> Migration vers le cloud</li>
+              <li><i class="pi pi-check"></i> Architecture microservices</li>
+              <li><i class="pi pi-check"></i> DevOps & CI/CD</li>
+              <li><i class="pi pi-check"></i> Monitoring & observabilité</li>
+              <li><i class="pi pi-check"></i> Conteneurisation</li>
+              <li><i class="pi pi-check"></i> Haute disponibilité</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sécurité -->
+      <div class="service-tab-content" *ngIf="activeTab === 'security'">
+        <div class="service-detail">
+          <div class="service-content">
+            <h2>Cybersécurité</h2>
+            <p>Protection complète de vos systèmes d'information contre les menaces cybernétiques avec des solutions de sécurité avancées.</p>
+            
+            <div class="technologies">
+              <h3>Domaines d'expertise</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <i class="pi pi-shield"></i>
+                  <span>Audit sécurité</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-shield"></i>
+                  <span>Pentesting</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-shield"></i>
+                  <span>SIEM</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-lock"></i>
+                  <span>Chiffrement</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-lock"></i>
+                  <span>IAM</span>
+                </div>
+                <div class="tech-item">
+                  <i class="pi pi-eye"></i>
+                  <span>SOC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="service-features">
+            <h3>Solutions sécurité</h3>
+            <ul>
+              <li><i class="pi pi-check"></i> Évaluation des vulnérabilités</li>
+              <li><i class="pi pi-check"></i> Tests d'intrusion</li>
+              <li><i class="pi pi-check"></i> Sécurisation des API</li>
+              <li><i class="pi pi-check"></i> Formation cybersécurité</li>
+              <li><i class="pi pi-check"></i> Conformité RGPD</li>
+              <li><i class="pi pi-check"></i> Plan de continuité</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="service-tab-content" *ngIf="activeTab === 'maintenance'">
+        <div class="service-detail">
+          <div class="service-content">
+            <h2>Maintenance & Support</h2>
+            <p>Support technique 24/7 et maintenance préventive pour assurer la performance optimale de vos systèmes informatiques.</p>
+            
+            <div class="support-levels">
+              <div class="support-level">
+                <h4>Support Standard</h4>
                 <ul>
-                  <li><i class="pi pi-check"></i> Applications web responsives</li>
-                  <li><i class="pi pi-check"></i> E-commerce & marketplaces</li>
-                  <li><i class="pi pi-check"></i> Applications métier (ERP, CRM)</li>
-                  <li><i class="pi pi-check"></i> Applications mobiles cross-platform</li>
-                  <li><i class="pi pi-check"></i> PWA (Progressive Web Apps)</li>
-                  <li><i class="pi pi-check"></i> API & services web</li>
+                  <li>Horaires bureau (9h-18h)</li>
+                  <li>Support email</li>
+                  <li>Maintenance préventive</li>
+                </ul>
+              </div>
+              <div class="support-level">
+                <h4>Support Premium</h4>
+                <ul>
+                  <li>Support 24/7</li>
+                  <li>Hotline dédiée</li>
+                  <li>SLA garanti</li>
                 </ul>
               </div>
             </div>
-          </p-tabPanel>
-
-          <p-tabPanel header="Infrastructure" leftIcon="pi pi-cloud">
-            <div class="service-detail">
-              <div class="service-content">
-                <h2>Infrastructure & Cloud</h2>
-                <p>Conception, déploiement et gestion d'infrastructures cloud modernes, sécurisées et scalables pour votre entreprise.</p>
-                
-                <div class="technologies">
-                  <h3>Plateformes Cloud</h3>
-                  <div class="tech-grid">
-                    <div class="tech-item">
-                      <i class="pi pi-cloud"></i>
-                      <span>AWS</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-cloud"></i>
-                      <span>Microsoft Azure</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-cloud"></i>
-                      <span>Google Cloud</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>Docker</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-server"></i>
-                      <span>Kubernetes</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-cog"></i>
-                      <span>Terraform</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="service-features">
-                <h3>Services Cloud</h3>
-                <ul>
-                  <li><i class="pi pi-check"></i> Migration vers le cloud</li>
-                  <li><i class="pi pi-check"></i> Architecture microservices</li>
-                  <li><i class="pi pi-check"></i> DevOps & CI/CD</li>
-                  <li><i class="pi pi-check"></i> Monitoring & observabilité</li>
-                  <li><i class="pi pi-check"></i> Conteneurisation</li>
-                  <li><i class="pi pi-check"></i> Haute disponibilité</li>
-                </ul>
-              </div>
-            </div>
-          </p-tabPanel>
-
-          <p-tabPanel header="Sécurité" leftIcon="pi pi-shield">
-            <div class="service-detail">
-              <div class="service-content">
-                <h2>Cybersécurité</h2>
-                <p>Protection complète de vos systèmes d'information contre les menaces cybernétiques avec des solutions de sécurité avancées.</p>
-                
-                <div class="technologies">
-                  <h3>Domaines d'expertise</h3>
-                  <div class="tech-grid">
-                    <div class="tech-item">
-                      <i class="pi pi-shield"></i>
-                      <span>Audit sécurité</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-shield"></i>
-                      <span>Pentesting</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-shield"></i>
-                      <span>SIEM</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-lock"></i>
-                      <span>Chiffrement</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-lock"></i>
-                      <span>IAM</span>
-                    </div>
-                    <div class="tech-item">
-                      <i class="pi pi-eye"></i>
-                      <span>SOC</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="service-features">
-                <h3>Solutions sécurité</h3>
-                <ul>
-                  <li><i class="pi pi-check"></i> Évaluation des vulnérabilités</li>
-                  <li><i class="pi pi-check"></i> Tests d'intrusion</li>
-                  <li><i class="pi pi-check"></i> Sécurisation des API</li>
-                  <li><i class="pi pi-check"></i> Formation cybersécurité</li>
-                  <li><i class="pi pi-check"></i> Conformité RGPD</li>
-                  <li><i class="pi pi-check"></i> Plan de continuité</li>
-                </ul>
-              </div>
-            </div>
-          </p-tabPanel>
-
-          <p-tabPanel header="Maintenance" leftIcon="pi pi-cog">
-            <div class="service-detail">
-              <div class="service-content">
-                <h2>Maintenance & Support</h2>
-                <p>Support technique 24/7 et maintenance préventive pour assurer la performance optimale de vos systèmes informatiques.</p>
-                
-                <div class="support-levels">
-                  <div class="support-level">
-                    <h4>Support Standard</h4>
-                    <ul>
-                      <li>Horaires bureau (9h-18h)</li>
-                      <li>Support email</li>
-                      <li>Maintenance préventive</li>
-                    </ul>
-                  </div>
-                  <div class="support-level">
-                    <h4>Support Premium</h4>
-                    <ul>
-                      <li>Support 24/7</li>
-                      <li>Hotline dédiée</li>
-                      <li>SLA garanti</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="service-features">
-                <h3>Services inclus</h3>
-                <ul>
-                  <li><i class="pi pi-check"></i> Monitoring proactif</li>
-                  <li><i class="pi pi-check"></i> Mises à jour sécurisées</li>
-                  <li><i class="pi pi-check"></i> Sauvegardes automatiques</li>
-                  <li><i class="pi pi-check"></i> Optimisation performances</li>
-                  <li><i class="pi pi-check"></i> Résolution incidents</li>
-                  <li><i class="pi pi-check"></i> Rapports mensuels</li>
-                </ul>
-              </div>
-            </div>
-          </p-tabPanel>
-        </p-tabView>
-      </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process">
-      <div class="container">
-        <div class="section-header">
-          <h2>Notre Processus</h2>
-          <p>Une méthode éprouvée pour garantir le succès de vos projets</p>
-        </div>
-        
-        <div class="process-steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Analyse & Audit</h3>
-              <p>Nous analysons vos besoins et réalisons un audit technique complet de votre infrastructure existante.</p>
-            </div>
           </div>
-          
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Conception & Planning</h3>
-              <p>Élaboration d'une solution sur-mesure avec planning détaillé et architecture technique.</p>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Développement</h3>
-              <p>Implémentation de la solution avec méthodologie agile et tests continus.</p>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <h3>Déploiement</h3>
-              <p>Mise en production sécurisée avec formation des équipes et transfert de compétences.</p>
-            </div>
-          </div>
-          
-          <div class="step">
-            <div class="step-number">5</div>
-            <div class="step-content">
-              <h3>Support & Maintenance</h3>
-              <p>Accompagnement continu avec support technique et évolutions fonctionnelles.</p>
-            </div>
+          <div class="service-features">
+            <h3>Services inclus</h3>
+            <ul>
+              <li><i class="pi pi-check"></i> Monitoring proactif</li>
+              <li><i class="pi pi-check"></i> Mises à jour sécurisées</li>
+              <li><i class="pi pi-check"></i> Sauvegardes automatiques</li>
+              <li><i class="pi pi-check"></i> Optimisation performances</li>
+              <li><i class="pi pi-check"></i> Résolution incidents</li>
+              <li><i class="pi pi-check"></i> Rapports mensuels</li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-      <div class="container">
-        <div class="section-header">
-          <h2>Questions Fréquentes</h2>
-          <p>Réponses aux questions les plus courantes de nos clients</p>
-        </div>
-        
-        <p-accordion>
-          <p-accordionTab header="Quels sont vos délais de livraison ?">
-            <p>Les délais varient selon la complexité du projet. Pour un site web simple : 2-4 semaines. 
-            Pour une application complète : 8-16 semaines. Nous établissons toujours un planning détaillé lors de l'analyse initiale.</p>
-          </p-accordionTab>
-          
-          <p-accordionTab header="Proposez-vous de la maintenance post-livraison ?">
-            <p>Oui, nous proposons différents niveaux de maintenance : support standard (horaires bureau) 
-            et support premium (24/7). Cela inclut les mises à jour, le monitoring et la résolution d'incidents.</p>
-          </p-accordionTab>
-          
-          <p-accordionTab header="Travaillez-vous avec des entreprises de toutes tailles ?">
-            <p>Absolument ! Nous accompagnons aussi bien les startups que les grandes entreprises. 
-            Nos solutions s'adaptent à votre budget et vos besoins spécifiques.</p>
-          </p-accordionTab>
-          
-          <p-accordionTab header="Comment garantissez-vous la sécurité des données ?">
-            <p>Nous appliquons les meilleures pratiques de sécurité : chiffrement des données, 
-            authentification forte, audits réguliers et conformité RGPD. Toutes nos solutions respectent les standards de sécurité.</p>
-          </p-accordionTab>
-          
-          <p-accordionTab header="Fournissez-vous de la formation ?">
-            <p>Oui, nous incluons la formation de vos équipes dans nos prestations. 
-            Cela peut être de la formation technique pour vos développeurs ou fonctionnelle pour les utilisateurs finaux.</p>
-          </p-accordionTab>
-        </p-accordion>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Discutons de Votre Projet</h2>
-          <p>Nos experts sont à votre disposition pour analyser vos besoins et vous proposer la solution idéale</p>
-          <div class="cta-buttons">
-            <p-button 
-              label="Demander un Devis" 
-              icon="pi pi-send" 
-              styleClass="p-button-lg"
-              routerLink="/contact">
-            </p-button>
-            <p-button 
-              label="Prendre RDV" 
-              icon="pi pi-calendar" 
-              styleClass="p-button-outlined p-button-lg">
-            </p-button>
-          </div>
+<!-- Process Section -->
+<section class="process">
+  <div class="container">
+    <div class="section-header">
+      <h2>Notre Processus</h2>
+      <p>Une méthode éprouvée pour garantir le succès de vos projets</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Analyse & Audit</h3>
+          <p>Nous analysons vos besoins et réalisons un audit technique complet de votre infrastructure existante.</p>
         </div>
       </div>
-    </section>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Conception & Planning</h3>
+          <p>Élaboration d'une solution sur-mesure avec planning détaillé et architecture technique.</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Développement</h3>
+          <p>Implémentation de la solution avec méthodologie agile et tests continus.</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Déploiement</h3>
+          <p>Mise en production sécurisée avec formation des équipes et transfert de compétences.</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Support & Maintenance</h3>
+          <p>Accompagnement continu avec support technique et évolutions fonctionnelles.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Questions Fréquentes</h2>
+      <p>Réponses aux questions les plus courantes de nos clients</p>
+    </div>
+    
+    <p-accordion>
+      <p-accordionTab header="Quels sont vos délais de livraison ?">
+        <p>Les délais varient selon la complexité du projet. Pour un site web simple : 2-4 semaines. 
+        Pour une application complète : 8-16 semaines. Nous établissons toujours un planning détaillé lors de l'analyse initiale.</p>
+      </p-accordionTab>
+      
+      <p-accordionTab header="Proposez-vous de la maintenance post-livraison ?">
+        <p>Oui, nous proposons différents niveaux de maintenance : support standard (horaires bureau) 
+        et support premium (24/7). Cela inclut les mises à jour, le monitoring et la résolution d'incidents.</p>
+      </p-accordionTab>
+      
+      <p-accordionTab header="Travaillez-vous avec des entreprises de toutes tailles ?">
+        <p>Absolument ! Nous accompagnons aussi bien les startups que les grandes entreprises. 
+        Nos solutions s'adaptent à votre budget et vos besoins spécifiques.</p>
+      </p-accordionTab>
+      
+      <p-accordionTab header="Comment garantissez-vous la sécurité des données ?">
+        <p>Nous appliquons les meilleures pratiques de sécurité : chiffrement des données, 
+        authentification forte, audits réguliers et conformité RGPD. Toutes nos solutions respectent les standards de sécurité.</p>
+      </p-accordionTab>
+      
+      <p-accordionTab header="Fournissez-vous de la formation ?">
+        <p>Oui, nous incluons la formation de vos équipes dans nos prestations. 
+        Cela peut être de la formation technique pour vos développeurs ou fonctionnelle pour les utilisateurs finaux.</p>
+      </p-accordionTab>
+    </p-accordion>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Discutons de Votre Projet</h2>
+      <p>Nos experts sont à votre disposition pour analyser vos besoins et vous proposer la solution idéale</p>
+      <div class="cta-buttons">
+        <p-button 
+          label="Demander un Devis" 
+          icon="pi pi-send" 
+          styleClass="p-button-lg"
+          routerLink="/contact">
+        </p-button>
+        <p-button 
+          label="Prendre RDV" 
+          icon="pi pi-calendar" 
+          styleClass="p-button-outlined p-button-lg">
+        </p-button>
+      </div>
+    </div>
+  </div>
+</section>

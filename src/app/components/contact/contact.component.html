@@ -1,5 +1,5 @@
 <p-toast></p-toast>
-    
+
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
@@ -23,19 +23,19 @@
               <ng-template pTemplate="subtitle">
                 Partagez-nous votre projet et recevez un devis personnalisé sous 24h
               </ng-template>
-              
+
               <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="form-grid">
                   <div class="form-group">
                     <label for="firstName">Prénom *</label>
-                    <input 
-                      pInputText 
-                      id="firstName" 
+                    <input
+                      pInputText
+                      id="firstName"
                       formControlName="firstName"
                       [class.ng-invalid]="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched"
                     />
-                    <small 
-                      class="p-error" 
+                    <small
+                      class="p-error"
                       *ngIf="contactForm.get('firstName')?.invalid && contactForm.get('firstName')?.touched">
                       Le prénom est requis
                     </small>
@@ -43,14 +43,14 @@
 
                   <div class="form-group">
                     <label for="lastName">Nom *</label>
-                    <input 
-                      pInputText 
-                      id="lastName" 
+                    <input
+                      pInputText
+                      id="lastName"
                       formControlName="lastName"
                       [class.ng-invalid]="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched"
                     />
-                    <small 
-                      class="p-error" 
+                    <small
+                      class="p-error"
                       *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
                       Le nom est requis
                     </small>
@@ -58,15 +58,15 @@
 
                   <div class="form-group">
                     <label for="email">Email *</label>
-                    <input 
-                      pInputText 
-                      id="email" 
-                      formControlName="email" 
+                    <input
+                      pInputText
+                      id="email"
+                      formControlName="email"
                       type="email"
                       [class.ng-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
                     />
-                    <small 
-                      class="p-error" 
+                    <small
+                      class="p-error"
                       *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
                       <span *ngIf="contactForm.get('email')?.errors?.['required']">L'email est requis</span>
                       <span *ngIf="contactForm.get('email')?.errors?.['email']">Format d'email invalide</span>
@@ -75,35 +75,35 @@
 
                   <div class="form-group">
                     <label for="phone">Téléphone</label>
-                    <input 
-                      pInputText 
-                      id="phone" 
+                    <input
+                      pInputText
+                      id="phone"
                       formControlName="phone"
-                      placeholder="+221 70 123 45 67"
+                      placeholder="+221 78 488 67 52"
                     />
                   </div>
 
                   <div class="form-group">
                     <label for="company">Entreprise</label>
-                    <input 
-                      pInputText 
-                      id="company" 
+                    <input
+                      pInputText
+                      id="company"
                       formControlName="company"
                     />
                   </div>
 
                   <div class="form-group">
                     <label for="service">Service souhaité *</label>
-                    <p-dropdown 
-                      [options]="services" 
-                      formControlName="service" 
+                    <p-dropdown
+                      [options]="services"
+                      formControlName="service"
                       placeholder="Sélectionnez un service"
-                      optionLabel="label" 
+                      optionLabel="label"
                       optionValue="value"
                       [class.ng-invalid]="contactForm.get('service')?.invalid && contactForm.get('service')?.touched"
                     ></p-dropdown>
-                    <small 
-                      class="p-error" 
+                    <small
+                      class="p-error"
                       *ngIf="contactForm.get('service')?.invalid && contactForm.get('service')?.touched">
                       Veuillez sélectionner un service
                     </small>
@@ -112,16 +112,16 @@
 
                 <div class="form-group full-width">
                   <label for="project">Description du projet *</label>
-                  <textarea 
-                    pInputTextarea 
-                    id="project" 
-                    formControlName="project" 
+                  <textarea
+                    pInputTextarea
+                    id="project"
+                    formControlName="project"
                     rows="5"
                     placeholder="Décrivez votre projet, vos besoins, vos objectifs..."
                     [class.ng-invalid]="contactForm.get('project')?.invalid && contactForm.get('project')?.touched"
                   ></textarea>
-                  <small 
-                    class="p-error" 
+                  <small
+                    class="p-error"
                     *ngIf="contactForm.get('project')?.invalid && contactForm.get('project')?.touched">
                     La description du projet est requise
                   </small>
@@ -129,19 +129,19 @@
 
                 <div class="form-group full-width">
                   <label for="budget">Budget approximatif</label>
-                  <p-dropdown 
-                    [options]="budgetRanges" 
-                    formControlName="budget" 
+                  <p-dropdown
+                    [options]="budgetRanges"
+                    formControlName="budget"
                     placeholder="Sélectionnez une fourchette (optionnel)"
-                    optionLabel="label" 
+                    optionLabel="label"
                     optionValue="value"
                   ></p-dropdown>
                 </div>
 
                 <div class="form-actions">
-                  <p-button 
-                    type="submit" 
-                    label="Envoyer la demande" 
+                  <p-button
+                    type="submit"
+                    label="Envoyer la demande"
                     icon="pi pi-send"
                     styleClass="p-button-lg"
                     [disabled]="contactForm.invalid"
@@ -160,8 +160,8 @@
                   <i class="pi pi-phone"></i>
                   Téléphone
                 </ng-template>
-                <p>+221 70 123 45 67</p>
-                <p>+221 77 987 65 43</p>
+                <p>+221 78 488 67 52</p>
+                <p>+221 76 151 76 42</p>
                 <small>Lun-Ven: 8h-18h | Sam: 9h-13h</small>
               </p-card>
 
@@ -201,14 +201,14 @@
               <h3>Besoin d'une réponse rapide ?</h3>
               <p>Contactez-nous directement par WhatsApp ou planifiez un appel</p>
               <div class="quick-buttons">
-                <p-button 
-                  label="WhatsApp" 
+                <p-button
+                  label="WhatsApp"
                   icon="pi pi-whatsapp"
                   styleClass="p-button-success"
                   (click)="openWhatsApp()">
                 </p-button>
-                <p-button 
-                  label="Planifier un appel" 
+                <p-button
+                  label="Planifier un appel"
                   icon="pi pi-calendar"
                   styleClass="p-button-outlined">
                 </p-button>
@@ -235,7 +235,7 @@
           <h2>Comment ça marche ?</h2>
           <p>Votre projet en 5 étapes simples</p>
         </div>
-        
+
         <div class="process-steps">
           <div class="step" *ngFor="let step of processSteps; let i = index">
             <div class="step-number">{{i + 1}}</div>

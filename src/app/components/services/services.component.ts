@@ -13,4 +13,24 @@ import { AccordionModule } from 'primeng/accordion';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
-export class ServicesComponent {}
+export class ServicesComponent {
+  // Gestion de l'onglet actif
+  activeTab: string = 'development';
+
+  /**
+   * Change l'onglet actif
+   * @param tab - L'identifiant de l'onglet à activer
+   */
+  setActiveTab(tab: string): void {
+    this.activeTab = tab;
+    
+    // Scroll fluide vers le contenu (optionnel)
+    const contentElement = document.querySelector('.service-content-container');
+    if (contentElement) {
+      contentElement.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  }
+}
