@@ -51,7 +51,7 @@ export class AboutComponent {
     {
       title: 'Leadership régional',
       date: '2024',
-      description: 'Reconnaissance comme leader de la transformation digitale en Afrique de l\'Ouest.',
+      description: 'Reconnaissance comme leader de la transformation digitale en Afrique.',
       icon: 'pi pi-star',
       color: 'purple',
       stats: [
