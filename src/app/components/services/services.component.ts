@@ -9,7 +9,7 @@ import { AccordionModule } from 'primeng/accordion';
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, RouterLink, ButtonModule, CardModule, TabViewModule, AccordionModule],
+  imports: [CommonModule, ButtonModule, CardModule, TabViewModule, AccordionModule],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.css']
 })
@@ -23,13 +23,13 @@ export class ServicesComponent {
    */
   setActiveTab(tab: string): void {
     this.activeTab = tab;
-    
+
     // Scroll fluide vers le contenu (optionnel)
     const contentElement = document.querySelector('.service-content-container');
     if (contentElement) {
-      contentElement.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
+      contentElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
   }

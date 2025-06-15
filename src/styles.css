@@ -1,4 +1,4 @@
-
+@import "primeicons/primeicons.css";
 /* Global Styles */
 * {
   box-sizing: border-box;
@@ -149,7 +149,7 @@ a {
   .p-card {
     margin: 0.5rem !important;
   }
-  
+
   .p-button {
     width: 100% !important;
     margin-bottom: 0.5rem !important;

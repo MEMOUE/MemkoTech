@@ -21,7 +21,7 @@ import { MenuItem } from 'primeng/api';
       <nav class="nav-container">
         <div class="logo">
           <h2 routerLink="/">
-            <i class="pi pi-bolt"></i>
+<!-- fixme logo           <i class="pi pi-bolt"></i>-->
             MemkoTech
           </h2>
         </div>
@@ -49,7 +49,9 @@ import { MenuItem } from 'primeng/api';
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
-          <h3><i class="pi pi-bolt"></i> MemkoTech</h3>
+          <h3>
+<!-- fixme logo <i class="pi pi-bolt"></i> -->
+            MemkoTech</h3>
           <p>Excellence technologique et innovation au service de votre entreprise.</p>
           <div class="social-links">
             <i class="pi pi-facebook"></i>
