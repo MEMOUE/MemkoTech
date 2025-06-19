@@ -1,325 +1,666 @@
- .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-    }
+/* =================================== */
+/* HERO SECTION */
+/* =================================== */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: clamp(6rem, 12vw, 8rem) 2rem clamp(3rem, 6vw, 4rem);
+  text-align: center;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-    .hero p {
-      font-size: 1.25rem;
-      opacity: 0.9;
-    }
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-    .contact-section {
-      padding: 6rem 2rem;
-      background: #f8f9fa;
-    }
+/* =================================== */
+/* CONTACT SECTION */
+/* =================================== */
+.contact-section {
+  padding: clamp(4rem, 10vw, 6rem) 2rem;
+  background: #f8f9fa;
+}
 
-    .contact-content {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 4rem;
-    }
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 6vw, 4rem);
+}
 
-    .contact-form {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
+/* =================================== */
+/* CONTACT FORM */
+/* =================================== */
+.contact-form {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  order: 2;
+}
 
-    .contact-form ::ng-deep .p-card-content {
-      padding: 2rem;
-    }
+.contact-form ::ng-deep .p-card {
+  border: none !important;
+  box-shadow: none !important;
+}
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
+.contact-form ::ng-deep .p-card-content {
+  padding: clamp(1.5rem, 4vw, 2rem);
+}
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+.contact-form ::ng-deep .p-card-title {
+  font-size: clamp(1.5rem, 4vw, 2rem) !important;
+  margin-bottom: 0.5rem !important;
+}
 
-    .form-group.full-width {
-      grid-column: 1 / -1;
-    }
+.contact-form ::ng-deep .p-card-subtitle {
+  font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  margin-bottom: 2rem !important;
+}
 
-    .form-group label {
-      font-weight: 600;
-      color: #2c3e50;
-      font-size: 0.9rem;
-    }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+}
 
-    .form-group ::ng-deep .p-inputtext,
-    .form-group ::ng-deep .p-dropdown,
-    .form-group ::ng-deep .p-inputtextarea {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 2px solid #e9ecef;
-      transition: all 0.3s ease;
-    }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-    .form-group ::ng-deep .p-inputtext:focus,
-    .form-group ::ng-deep .p-dropdown:focus,
-    .form-group ::ng-deep .p-inputtextarea:focus {
-      border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    }
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
 
-    .form-group ::ng-deep .ng-invalid:not(.ng-untouched) {
-      border-color: #e74c3c;
-    }
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+}
 
-    .p-error {
-      color: #e74c3c;
-      font-size: 0.8rem;
-      margin-top: 0.25rem;
-    }
+.form-group ::ng-deep .p-inputtext,
+.form-group ::ng-deep .p-dropdown,
+.form-group ::ng-deep .p-inputtextarea {
+  width: 100% !important;
+  padding: clamp(0.5rem, 2vw, 0.75rem) !important;
+  border-radius: 8px !important;
+  border: 2px solid #e9ecef !important;
+  transition: all 0.3s ease !important;
+  font-size: clamp(0.8rem, 2.5vw, 0.9rem) !important;
+}
 
-    .form-actions {
-      margin-top: 2rem;
-      text-align: center;
-    }
+.form-group ::ng-deep .p-inputtext:focus,
+.form-group ::ng-deep .p-dropdown:focus,
+.form-group ::ng-deep .p-inputtextarea:focus {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
 
-    .form-actions ::ng-deep .p-button {
-      padding: 1rem 3rem;
-      font-weight: 600;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border: none;
-    }
+.form-group ::ng-deep .ng-invalid:not(.ng-untouched) {
+  border-color: #e74c3c !important;
+}
 
-    .form-actions ::ng-deep .p-button:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-    }
+.p-error {
+  color: #e74c3c;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  margin-top: 0.25rem;
+}
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+.form-actions {
+  margin-top: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
+}
 
-    .info-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
+.form-actions ::ng-deep .p-button {
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(2rem, 6vw, 3rem) !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  border: none !important;
+  font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+  width: 100%;
+  max-width: 300px;
+}
 
-    .info-card {
-      transition: all 0.3s ease;
-    }
+.form-actions ::ng-deep .p-button:hover:not(:disabled) {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
 
-    .info-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
+/* =================================== */
+/* CONTACT INFO */
+/* =================================== */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  order: 1;
+}
 
-    .info-card ::ng-deep .p-card-title {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: #2c3e50;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
 
-    .info-card ::ng-deep .p-card-title i {
-      color: #667eea;
-      font-size: 1.25rem;
-    }
+.info-card {
+  transition: all 0.3s ease;
+}
 
-    .info-card ::ng-deep .p-card-content p {
-      margin-bottom: 0.5rem;
-      color: #2c3e50;
-      font-weight: 500;
-    }
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
 
-    .info-card ::ng-deep .p-card-content small {
-      color: #666;
-      font-style: italic;
-    }
+.info-card ::ng-deep .p-card-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  color: #2c3e50 !important;
+  font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+  margin-bottom: 1rem !important;
+}
 
-    .quick-contact {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+.info-card ::ng-deep .p-card-title i {
+  color: #667eea !important;
+  font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+}
 
-    .quick-contact h3 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
+.info-card ::ng-deep .p-card-content p {
+  margin-bottom: 0.5rem !important;
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+}
 
-    .quick-contact p {
-      color: #666;
-      margin-bottom: 1.5rem;
-    }
+.info-card ::ng-deep .p-card-content small {
+  color: #666 !important;
+  font-style: italic !important;
+  font-size: clamp(0.8rem, 2vw, 0.9rem) !important;
+}
 
-    .quick-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+.quick-contact {
+  background: white;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-    .quick-buttons ::ng-deep .p-button {
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 500;
-    }
+.quick-contact h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+}
 
-    .faq-section {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+.quick-contact p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
 
-    .faq-section h3 {
-      color: #2c3e50;
-      margin-bottom: 2rem;
-      font-size: 1.25rem;
-    }
+.quick-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    .faq-item {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #e9ecef;
-    }
+.quick-buttons ::ng-deep .p-button {
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem) !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: clamp(0.8rem, 2vw, 0.9rem) !important;
+  white-space: nowrap;
+}
 
-    .faq-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+.faq-section {
+  background: white;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
-    .faq-item h4 {
-      color: #2c3e50;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
+.faq-section h3 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+}
 
-    .faq-item p {
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin: 0;
-    }
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
 
-    .process {
-      background: white;
-      padding: 6rem 2rem;
-    }
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+.faq-item h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
 
-    .section-header h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #2c3e50;
-      margin-bottom: 1rem;
-    }
+.faq-item p {
+  color: #666;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  line-height: 1.5;
+  margin: 0;
+}
 
-    .section-header p {
-      font-size: 1.2rem;
-      color: #666;
-    }
+/* =================================== */
+/* PROCESS SECTION */
+/* =================================== */
+.process {
+  background: white;
+  padding: clamp(4rem, 10vw, 6rem) 2rem;
+}
 
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 8vw, 4rem);
+}
 
-    .step {
-      text-align: center;
-      padding: 2rem;
-      background: #f8f9fa;
-      border-radius: 16px;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
+.section-header h2 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
 
-    .step:hover {
-      border-color: #667eea;
-      transform: translateY(-5px);
-    }
+.section-header p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-    .step-number {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0 auto 1.5rem;
-    }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2rem);
+}
 
-    .step-content h3 {
-      color: #2c3e50;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-    }
+.step {
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  background: #f8f9fa;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
 
-    .step-content p {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
+.step:hover {
+  border-color: #667eea;
+  transform: translateY(-5px);
+}
 
-    .step-duration {
-      color: #667eea;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
+.step-number {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: clamp(50px, 10vw, 60px);
+  height: clamp(50px, 10vw, 60px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+.step-content h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+}
 
-      .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
+.step-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
 
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+.step-duration {
+  color: #667eea;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
 
-      .quick-buttons {
-        flex-direction: column;
-      }
+/* =================================== */
+/* RESPONSIVE BREAKPOINTS */
+/* =================================== */
 
-      .process-steps {
-        grid-template-columns: 1fr;
-      }
-    }
+/* Extra Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info {
+    order: 1;
+  }
+
+  .contact-form {
+    order: 2;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quick-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .quick-buttons ::ng-deep .p-button {
+    width: 100% !important;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-actions ::ng-deep .p-button {
+    width: 100% !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .quick-buttons {
+    gap: 1rem;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .contact-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info {
+    order: 1;
+  }
+
+  .contact-form {
+    order: 2;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .contact-content {
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-form {
+    order: 1;
+  }
+
+  .contact-info {
+    order: 2;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .form-actions ::ng-deep .p-button {
+    width: auto !important;
+  }
+}
+
+/* =================================== */
+/* LANDSCAPE ORIENTATION */
+/* =================================== */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .hero {
+    padding: 4rem 2rem 2rem;
+  }
+
+  .contact-section {
+    padding: 3rem 2rem;
+  }
+
+  .process {
+    padding: 3rem 2rem;
+  }
+
+  .contact-content {
+    gap: 2rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =================================== */
+/* ACCESSIBILITY IMPROVEMENTS */
+/* =================================== */
+
+/* Focus indicators */
+.form-group ::ng-deep .p-inputtext:focus,
+.form-group ::ng-deep .p-dropdown:focus,
+.form-group ::ng-deep .p-inputtextarea:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.3) !important;
+  outline-offset: 1px !important;
+}
+
+.form-actions ::ng-deep .p-button:focus,
+.quick-buttons ::ng-deep .p-button:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.5) !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .contact-form,
+  .info-card ::ng-deep .p-card,
+  .quick-contact,
+  .faq-section,
+  .step {
+    border: 2px solid #2c3e50 !important;
+  }
+
+  .form-group ::ng-deep .p-inputtext,
+  .form-group ::ng-deep .p-dropdown,
+  .form-group ::ng-deep .p-inputtextarea {
+    border: 2px solid #2c3e50 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .info-card:hover,
+  .step:hover {
+    transform: none !important;
+  }
+
+  .form-actions ::ng-deep .p-button:hover:not(:disabled) {
+    transform: none !important;
+  }
+}
+
+/* =================================== */
+/* PRINT STYLES */
+/* =================================== */
+@media print {
+  .hero {
+    background: none !important;
+    color: black !important;
+    padding: 2rem 0 !important;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .contact-form,
+  .info-cards,
+  .quick-contact,
+  .faq-section {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+
+  .form-actions,
+  .quick-buttons {
+    display: none !important;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr !important;
+  }
+
+  .step {
+    page-break-inside: avoid;
+  }
+}
+
+/* =================================== */
+/* TOUCH DEVICES OPTIMIZATION */
+/* =================================== */
+@media (hover: none) and (pointer: coarse) {
+  .form-group ::ng-deep .p-inputtext,
+  .form-group ::ng-deep .p-dropdown,
+  .form-group ::ng-deep .p-inputtextarea {
+    padding: 1rem !important; /* Larger touch targets */
+  }
+
+  .form-actions ::ng-deep .p-button,
+  .quick-buttons ::ng-deep .p-button {
+    padding: 1rem 2rem !important; /* Larger touch targets */
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Remove hover effects on touch devices */
+  .info-card:hover,
+  .step:hover {
+    transform: none;
+  }
+}
+
+/* Very small screens optimization */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .contact-form ::ng-deep .p-card-content {
+    padding: 1rem;
+  }
+
+  .form-grid {
+    gap: 0.75rem;
+  }
+
+  .quick-contact,
+  .faq-section {
+    padding: 1rem;
+  }
+
+  .process-steps {
+    gap: 1rem;
+  }
+
+  .step {
+    padding: 1rem;
+  }
+}
+
+/* =================================== */
+/* FORM VALIDATION STYLES */
+/* =================================== */
+.form-group ::ng-deep .ng-invalid.ng-touched .p-inputtext {
+  border-color: #e74c3c !important;
+  background-color: rgba(231, 76, 60, 0.05) !important;
+}
+
+.form-group ::ng-deep .ng-valid.ng-touched .p-inputtext {
+  border-color: #27ae60 !important;
+  background-color: rgba(39, 174, 96, 0.05) !important;
+}
+
+/* Loading state for form */
+.form-actions ::ng-deep .p-button[aria-label*="Loading"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Toast positioning for mobile */
+@media (max-width: 767.98px) {
+  ::ng-deep .p-toast {
+    top: 1rem !important;
+    right: 1rem !important;
+    left: 1rem !important;
+    width: auto !important;
+  }
+
+  ::ng-deep .p-toast .p-toast-message {
+    margin: 0 !important;
+  }
+}
