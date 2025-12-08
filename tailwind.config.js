@@ -36,8 +36,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter var', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
@@ -85,6 +83,7 @@ module.exports = {
         },
       },
       boxShadow: {
+        'glow-blue-sm': '0 0 10px rgba(59, 130, 246, 0.3)',
         'glow-blue': '0 0 20px rgba(59, 130, 246, 0.5)',
         'glow-blue-lg': '0 0 40px rgba(59, 130, 246, 0.6)',
         'xl-blue': '0 20px 50px -12px rgba(59, 130, 246, 0.25)',
