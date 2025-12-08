@@ -10,12 +10,24 @@
   }
 
   body {
-    @apply bg-white text-gray-800;
+    @apply bg-white text-gray-800 font-sans;
   }
 }
 
 /* ============================= */
-/* Accessibility – FOCUS (✅ V3) */
+/* Custom utility classes */
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ============================= */
+/* Accessibility – FOCUS */
 @layer components {
   button:focus-visible,
   a:focus-visible,
@@ -30,15 +42,158 @@
 /* ============================= */
 /* PrimeNG overrides */
 @layer components {
-  .p-button-primary {
-    @apply bg-primary-600 border-primary-600 text-white;
+  .p-button {
+    @apply font-semibold transition-all duration-300;
   }
 
-  .p-button-primary:hover {
-    @apply bg-primary-700;
+  .p-button-primary {
+    @apply bg-primary-600 border-primary-600 text-white hover:bg-primary-700;
+  }
+
+  .p-button-outlined {
+    @apply border-2 border-white text-white bg-transparent hover:bg-white/10;
+  }
+
+  .p-inputtext {
+    @apply border-2 border-gray-300 rounded-lg px-4 py-2 transition-all;
   }
 
   .p-inputtext:focus {
-    @apply ring-2 ring-primary-500 ring-offset-1;
+    @apply ring-2 ring-primary-500 ring-offset-1 border-primary-500;
+  }
+
+  .p-dropdown {
+    @apply border-2 border-gray-300 rounded-lg;
+  }
+
+  .p-dropdown:focus {
+    @apply ring-2 ring-primary-500 ring-offset-1 border-primary-500;
+  }
+
+  .p-inputtextarea {
+    @apply border-2 border-gray-300 rounded-lg px-4 py-2;
+  }
+
+  .p-inputtextarea:focus {
+    @apply ring-2 ring-primary-500 ring-offset-1 border-primary-500;
+  }
+
+  .p-card {
+    @apply rounded-2xl shadow-lg overflow-hidden;
+  }
+
+  .p-card .p-card-body {
+    @apply p-6;
+  }
+
+  .p-card .p-card-title {
+    @apply text-2xl font-bold mb-2;
+  }
+
+  .p-card .p-card-subtitle {
+    @apply text-gray-600 mb-4;
+  }
+
+  .p-card .p-card-content {
+    @apply text-gray-700;
+  }
+
+  /* Timeline styles */
+  .p-timeline .p-timeline-event-marker {
+    @apply border-2 border-primary-500 bg-white;
+  }
+
+  .p-timeline .p-timeline-event-connector {
+    @apply bg-primary-300;
+  }
+
+  /* Accordion styles */
+  .p-accordion .p-accordion-header .p-accordion-header-link {
+    @apply bg-gray-100 border border-gray-300 rounded-lg px-4 py-3 font-semibold transition-all;
+  }
+
+  .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+    @apply bg-primary-600 text-white border-primary-600;
+  }
+
+  .p-accordion .p-accordion-content {
+    @apply bg-white px-4 py-6 border-x border-b border-gray-300 rounded-b-lg;
+  }
+
+  /* Toast messages */
+  .p-toast {
+    @apply z-[9999];
+  }
+
+  .p-toast .p-toast-message {
+    @apply rounded-lg shadow-xl;
+  }
+}
+
+/* ============================= */
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* ============================= */
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* ============================= */
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply text-black bg-white;
+  }
+
+  a {
+    @apply text-black no-underline;
   }
 }
