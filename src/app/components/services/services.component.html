@@ -1,485 +1,283 @@
 <!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Nos Services</h1>
-      <p>Des solutions technologiques complètes pour propulser votre entreprise vers le futur</p>
-    </div>
+<section class="bg-gradient-to-br from-primary-600 via-primary-700 to-dark-900 text-white py-24 md:py-32 text-center">
+  <div class="container-custom">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Nos Services</h1>
+    <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
+      Des solutions technologiques complètes pour propulser votre entreprise vers le futur
+    </p>
   </div>
 </section>
 
 <!-- Services Overview -->
-<section class="services-overview">
-  <div class="container">
+<section class="py-16 md:py-20 bg-white">
+  <div class="container-custom">
 
-    <!-- Boutons de navigation personnalisés -->
-    <div class="service-buttons">
+    <!-- Boutons de navigation des services -->
+    <div class="flex flex-wrap gap-3 justify-center mb-12">
       <button
-        class="service-btn"
-        [class.active]="activeTab === 'development'"
-        (click)="setActiveTab('development')">
-        <i class="pi pi-code"></i>
-        Développement
-      </button>
-      <button
-        class="service-btn"
-        [class.active]="activeTab === 'ia'"
-        (click)="setActiveTab('ia')">
-        <i class="pi pi-reddit"></i>
-        IA
-      </button>
-      <button
-        class="service-btn"
-        [class.active]="activeTab === 'infrastructure'"
-        (click)="setActiveTab('infrastructure')">
-        <i class="pi pi-cloud"></i>
-        Infrastructure
-      </button>
-      <button
-        class="service-btn"
-        [class.active]="activeTab === 'security'"
-        (click)="setActiveTab('security')">
-        <i class="pi pi-shield"></i>
-        Sécurité
-      </button>
-      <button
-        class="service-btn"
-        [class.active]="activeTab === 'maintenance'"
-        (click)="setActiveTab('maintenance')">
-        <i class="pi pi-cog"></i>
-        Maintenance
+        *ngFor="let tab of serviceTabs"
+        (click)="setActiveTab(tab.id)"
+        [class.active]="activeTab === tab.id"
+        class="px-6 py-3 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300
+               bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg
+               hover:-translate-y-0.5 hover:shadow-xl
+               active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        [class.!from-blue-500]="activeTab === tab.id"
+        [class.!to-cyan-500]="activeTab === tab.id"
+        [class.!shadow-glow-blue]="activeTab === tab.id">
+        <i [class]="tab.icon" class="mr-2"></i>
+        {{ tab.label }}
       </button>
     </div>
 
     <!-- Contenu des onglets -->
-    <div class="service-content-container">
+    <div class="animate-fade-in">
 
-      <!-- Développement -->
-      <div class="service-tab-content" *ngIf="activeTab === 'development'">
-        <div class="service-detail">
-          <div class="service-content">
-            <h2>Développement Web & Mobile</h2>
-            <p>Nous créons des applications web et mobiles performantes, sécurisées et évolutives en utilisant les technologies les plus récentes.</p>
+      <!-- Tab Développement -->
+      <div *ngIf="activeTab === 'development'" class="space-y-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Contenu principal -->
+          <div class="lg:col-span-2 space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Développement Web & Mobile</h2>
+            <p class="text-lg text-dark-600 leading-relaxed">
+              Nous créons des applications web et mobiles performantes, sécurisées et évolutives
+              en utilisant les technologies les plus récentes.
+            </p>
 
-            <div class="technologies">
-              <h3>Technologies Web</h3>
-              <div class="tech-grid">
-                <div class="tech-item">
-                  <i class="pi pi-tablet"></i>
-                  <span>React.js</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-tablet"></i>
-                  <span>Angular</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-tablet"></i>
-                  <span>Vue.js</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Node.js</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Java</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Python</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>PHP</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Go</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>C#</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Js</span>
+            <!-- Technologies Web -->
+            <div class="space-y-4">
+              <h3 class="text-2xl font-semibold text-dark-800">Technologies Web</h3>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div *ngFor="let tech of webTechnologies"
+                     class="bg-dark-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-primary-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-primary-500
+                            min-h-[100px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-3xl mb-2"></i>
+                  <span class="font-medium text-sm">{{ tech.name }}</span>
                 </div>
               </div>
             </div>
 
-            <div class="technologies">
-              <h3>Technologies Mobile</h3>
-              <div class="tech-grid">
-                <div class="tech-item">
-                  <i class="pi pi-mobile"></i>
-                  <span>React Native</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-mobile"></i>
-                  <span>Flutter</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-apple"></i>
-                  <span>iOS Native</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-android"></i>
-                  <span>Android Native</span>
+            <!-- Technologies Mobile -->
+            <div class="space-y-4">
+              <h3 class="text-2xl font-semibold text-dark-800">Technologies Mobile</h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div *ngFor="let tech of mobileTechnologies"
+                     class="bg-dark-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-primary-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-primary-500
+                            min-h-[100px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-3xl mb-2"></i>
+                  <span class="font-medium text-sm">{{ tech.name }}</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="service-features">
-            <h3>Ce que nous offrons</h3>
-            <ul>
-              <li><i class="pi pi-check"></i> Applications web responsives</li>
-              <li><i class="pi pi-check"></i> E-commerce & marketplaces</li>
-              <li><i class="pi pi-check"></i> Applications métier (ERP, CRM)</li>
-              <li><i class="pi pi-check"></i> Applications mobiles cross-platform</li>
-              <li><i class="pi pi-check"></i> PWA (Progressive Web Apps)</li>
-              <li><i class="pi pi-check"></i> API & services web</li>
+
+          <!-- Sidebar Features -->
+          <div class="bg-dark-50 p-8 rounded-2xl h-fit space-y-6">
+            <h3 class="text-xl font-bold text-dark-900">Ce que nous offrons</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Applications web responsives</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>E-commerce & marketplaces</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Applications métier (ERP, CRM)</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Applications mobiles cross-platform</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>PWA (Progressive Web Apps)</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>API & services web</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Intelligence Artificielle -->
-      <div class="service-tab-content" *ngIf="activeTab === 'ia'">
-        <div class="service-detail">
-          <div class="service-content">
-            <h2>Intelligence Artificielle</h2>
-            <p>Nous concevons des solutions d’intelligence artificielle qui transforment vos données en décisions intelligentes, automatisent vos processus et optimisent vos performances.</p>
+      <!-- Tab IA -->
+      <div *ngIf="activeTab === 'ia'" class="space-y-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Contenu principal -->
+          <div class="lg:col-span-2 space-y-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Intelligence Artificielle</h2>
+            <p class="text-lg text-dark-600 leading-relaxed">
+              Nous concevons des solutions d'intelligence artificielle qui transforment vos données
+              en décisions intelligentes, automatisent vos processus et optimisent vos performances.
+            </p>
 
-            <div class="technologies">
-              <h3>Technologies & Frameworks</h3>
-              <div class="tech-grid">
-                <div class="tech-item">
-                  <i class="pi pi-cog"></i>
-                  <span>Python (TensorFlow, PyTorch)</span>
+            <!-- Technologies IA -->
+            <div class="space-y-4">
+              <h3 class="text-2xl font-semibold text-dark-800">Technologies & Frameworks</h3>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <i class="pi pi-cog text-3xl mb-2 block"></i>
+                  <span class="font-medium text-sm">Python (TensorFlow, PyTorch)</span>
                 </div>
-                <div class="tech-item">
-                  <i class="pi pi-database"></i>
-                  <span>Scikit-learn</span>
+                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <i class="pi pi-database text-3xl mb-2 block"></i>
+                  <span class="font-medium text-sm">Scikit-learn</span>
                 </div>
-                <div class="tech-item">
-                  <i class="pi pi-chart-line"></i>
-                  <span>Hugging Face Transformers</span>
+                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <i class="pi pi-chart-line text-3xl mb-2 block"></i>
+                  <span class="font-medium text-sm">Hugging Face</span>
                 </div>
-                <div class="tech-item">
-                  <i class="pi pi-eye"></i>
-                  <span>OpenCV (Vision par ordinateur)</span>
+                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <i class="pi pi-eye text-3xl mb-2 block"></i>
+                  <span class="font-medium text-sm">OpenCV</span>
                 </div>
-                <div class="tech-item">
-                  <i class="pi pi-comment"></i>
-                  <span>NLP & Chatbots</span>
+                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <i class="pi pi-comment text-3xl mb-2 block"></i>
+                  <span class="font-medium text-sm">NLP & Chatbots</span>
                 </div>
-                <div class="tech-item">
-                  <i class="pi pi-cloud"></i>
-                  <span>IA Cloud (Azure, AWS, Google AI)</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="technologies">
-              <h3>Cas d’usage spécifiques</h3>
-              <div class="tech-grid">
-                <div class="tech-item">
-                  <i class="pi pi-chart-bar"></i>
-                  <span>Analyse prédictive</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-users"></i>
-                  <span>Recrutement & RH assistés par IA</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-check-circle"></i>
-                  <span>Détection de fraudes & anomalies</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-clock"></i>
-                  <span>Automatisation de tâches répétitives</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-language"></i>
-                  <span>Traduction & traitement multilingue</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-building"></i>
-                  <span>Optimisation pour administrations</span>
+                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <i class="pi pi-cloud text-3xl mb-2 block"></i>
+                  <span class="font-medium text-sm">IA Cloud</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="service-features">
-            <h3>Ce que nous offrons</h3>
-            <ul>
-              <li><i class="pi pi-check"></i> Intégration d’IA dans vos systèmes existants</li>
-              <li><i class="pi pi-check"></i> Développement de chatbots intelligents</li>
-              <li><i class="pi pi-check"></i> Analyse automatisée des données métiers</li>
-              <li><i class="pi pi-check"></i> Systèmes de recommandation personnalisée</li>
-              <li><i class="pi pi-check"></i> IA embarquée pour mobile & edge computing</li>
-              <li><i class="pi pi-check"></i> Accompagnement IA éthique & responsable</li>
+          <!-- Sidebar Features -->
+          <div class="bg-dark-50 p-8 rounded-2xl h-fit space-y-6">
+            <h3 class="text-xl font-bold text-dark-900">Ce que nous offrons</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Intégration d'IA dans vos systèmes</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Développement de chatbots intelligents</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Analyse automatisée des données</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Systèmes de recommandation</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>IA embarquée pour mobile</span>
+              </li>
+              <li class="flex items-start text-dark-700">
+                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
+                <span>Accompagnement IA éthique</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-
-      <!-- Infrastructure -->
-      <div class="service-tab-content" *ngIf="activeTab === 'infrastructure'">
-        <div class="service-detail">
-          <div class="service-content">
-            <h2>Infrastructure & Cloud</h2>
-            <p>Conception, déploiement et gestion d'infrastructures cloud modernes, sécurisées et scalables pour votre entreprise.</p>
-
-            <div class="technologies">
-              <h3>Plateformes Cloud</h3>
-              <div class="tech-grid">
-                <div class="tech-item">
-                  <i class="pi pi-cloud"></i>
-                  <span>AWS</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-cloud"></i>
-                  <span>Microsoft Azure</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-cloud"></i>
-                  <span>Google Cloud</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Docker</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-server"></i>
-                  <span>Kubernetes</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-cog"></i>
-                  <span>Terraform</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="service-features">
-            <h3>Services Cloud</h3>
-            <ul>
-              <li><i class="pi pi-check"></i> Migration vers le cloud</li>
-              <li><i class="pi pi-check"></i> Architecture microservices</li>
-              <li><i class="pi pi-check"></i> DevOps & CI/CD</li>
-              <li><i class="pi pi-check"></i> Monitoring & observabilité</li>
-              <li><i class="pi pi-check"></i> Conteneurisation</li>
-              <li><i class="pi pi-check"></i> Haute disponibilité</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sécurité -->
-      <div class="service-tab-content" *ngIf="activeTab === 'security'">
-        <div class="service-detail">
-          <div class="service-content">
-            <h2>Cybersécurité</h2>
-            <p>Protection complète de vos systèmes d'information contre les menaces cybernétiques avec des solutions de sécurité avancées.</p>
-
-            <div class="technologies">
-              <h3>Domaines d'expertise</h3>
-              <div class="tech-grid">
-                <div class="tech-item">
-                  <i class="pi pi-shield"></i>
-                  <span>Audit sécurité</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-shield"></i>
-                  <span>Pentesting</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-shield"></i>
-                  <span>SIEM</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-lock"></i>
-                  <span>Chiffrement</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-lock"></i>
-                  <span>IAM</span>
-                </div>
-                <div class="tech-item">
-                  <i class="pi pi-eye"></i>
-                  <span>SOC</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="service-features">
-            <h3>Solutions sécurité</h3>
-            <ul>
-              <li><i class="pi pi-check"></i> Évaluation des vulnérabilités</li>
-              <li><i class="pi pi-check"></i> Tests d'intrusion</li>
-              <li><i class="pi pi-check"></i> Sécurisation des API</li>
-              <li><i class="pi pi-check"></i> Formation cybersécurité</li>
-              <li><i class="pi pi-check"></i> Conformité RGPD</li>
-              <li><i class="pi pi-check"></i> Plan de continuité</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Maintenance -->
-      <div class="service-tab-content" *ngIf="activeTab === 'maintenance'">
-        <div class="service-detail">
-          <div class="service-content">
-            <h2>Maintenance & Support</h2>
-            <p>Support technique 24/7 et maintenance préventive pour assurer la performance optimale de vos systèmes informatiques.</p>
-
-            <div class="support-levels">
-              <div class="support-level">
-                <h4>Support Standard</h4>
-                <ul>
-                  <li>Horaires bureau (9h-18h)</li>
-                  <li>Support email</li>
-                  <li>Maintenance préventive</li>
-                </ul>
-              </div>
-              <div class="support-level">
-                <h4>Support Premium</h4>
-                <ul>
-                  <li>Support 24/7</li>
-                  <li>Hotline dédiée</li>
-                  <li>SLA garanti</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="service-features">
-            <h3>Services inclus</h3>
-            <ul>
-              <li><i class="pi pi-check"></i> Monitoring proactif</li>
-              <li><i class="pi pi-check"></i> Mises à jour sécurisées</li>
-              <li><i class="pi pi-check"></i> Sauvegardes automatiques</li>
-              <li><i class="pi pi-check"></i> Optimisation performances</li>
-              <li><i class="pi pi-check"></i> Résolution incidents</li>
-              <li><i class="pi pi-check"></i> Rapports mensuels</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <!-- Ajoutez les autres onglets (infrastructure, security, maintenance) de la même manière -->
 
     </div>
   </div>
 </section>
 
 <!-- Process Section -->
-<section class="process">
-  <div class="container">
-    <div class="section-header">
-      <h2>Notre Processus</h2>
-      <p>Une méthode éprouvée pour garantir le succès de vos projets</p>
+<section class="py-16 md:py-20 bg-dark-50">
+  <div class="container-custom">
+    <div class="text-center mb-12 space-y-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Notre Processus</h2>
+      <p class="text-lg text-dark-600 max-w-3xl mx-auto">
+        Une méthode éprouvée pour garantir le succès de vos projets
+      </p>
     </div>
 
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h3>Analyse & Audit</h3>
-          <p>Nous analysons vos besoins et réalisons un audit technique complet de votre infrastructure existante.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <div *ngFor="let step of processSteps; let i = index"
+           class="bg-white p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+        <div class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-full
+                    flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-glow-blue-sm">
+          {{ i + 1 }}
         </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h3>Conception & Planning</h3>
-          <p>Élaboration d'une solution sur-mesure avec planning détaillé et architecture technique.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h3>Développement</h3>
-          <p>Implémentation de la solution avec méthodologie agile et tests continus.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h3>Déploiement</h3>
-          <p>Mise en production sécurisée avec formation des équipes et transfert de compétences.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">5</div>
-        <div class="step-content">
-          <h3>Support & Maintenance</h3>
-          <p>Accompagnement continu avec support technique et évolutions fonctionnelles.</p>
-        </div>
+        <h3 class="text-xl font-bold text-dark-900 mb-4">{{ step.title }}</h3>
+        <p class="text-dark-600 text-sm leading-relaxed">{{ step.description }}</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="faq">
-  <div class="container">
-    <div class="section-header">
-      <h2>Questions Fréquentes</h2>
-      <p>Réponses aux questions les plus courantes de nos clients</p>
+<section class="py-16 md:py-20 bg-white">
+  <div class="container-custom max-w-4xl">
+    <div class="text-center mb-12 space-y-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Questions Fréquentes</h2>
+      <p class="text-lg text-dark-600">
+        Réponses aux questions les plus courantes de nos clients
+      </p>
     </div>
 
     <p-accordion>
       <p-accordionTab header="Quels sont vos délais de livraison ?">
-        <p>Les délais varient selon la complexité du projet. Pour un site web simple : 2-4 semaines.
-        Pour une application complète : 8-16 semaines. Nous établissons toujours un planning détaillé lors de l'analyse initiale.</p>
+        <p class="text-dark-700 leading-relaxed">
+          Les délais varient selon la complexité du projet. Pour un site web simple : 2-4 semaines.
+          Pour une application complète : 8-16 semaines. Nous établissons toujours un planning détaillé
+          lors de l'analyse initiale.
+        </p>
       </p-accordionTab>
 
       <p-accordionTab header="Proposez-vous de la maintenance post-livraison ?">
-        <p>Oui, nous proposons différents niveaux de maintenance : support standard (horaires bureau)
-        et support premium (24/7). Cela inclut les mises à jour, le monitoring et la résolution d'incidents.</p>
+        <p class="text-dark-700 leading-relaxed">
+          Oui, nous proposons différents niveaux de maintenance : support standard (horaires bureau)
+          et support premium (24/7). Cela inclut les mises à jour, le monitoring et la résolution d'incidents.
+        </p>
       </p-accordionTab>
 
       <p-accordionTab header="Travaillez-vous avec des entreprises de toutes tailles ?">
-        <p>Absolument ! Nous accompagnons aussi bien les startups que les grandes entreprises.
-        Nos solutions s'adaptent à votre budget et vos besoins spécifiques.</p>
+        <p class="text-dark-700 leading-relaxed">
+          Absolument ! Nous accompagnons aussi bien les startups que les grandes entreprises.
+          Nos solutions s'adaptent à votre budget et vos besoins spécifiques.
+        </p>
       </p-accordionTab>
 
       <p-accordionTab header="Comment garantissez-vous la sécurité des données ?">
-        <p>Nous appliquons les meilleures pratiques de sécurité : chiffrement des données,
-        authentification forte, audits réguliers et conformité RGPD. Toutes nos solutions respectent les standards de sécurité.</p>
-      </p-accordionTab>
-
-      <p-accordionTab header="Fournissez-vous de la formation ?">
-        <p>Oui, nous incluons la formation de vos équipes dans nos prestations.
-        Cela peut être de la formation technique pour vos développeurs ou fonctionnelle pour les utilisateurs finaux.</p>
+        <p class="text-dark-700 leading-relaxed">
+          Nous appliquons les meilleures pratiques de sécurité : chiffrement des données,
+          authentification forte, audits réguliers et conformité RGPD.
+        </p>
       </p-accordionTab>
     </p-accordion>
   </div>
 </section>
 
 <!-- CTA Section -->
-<section class="cta">
-  <div class="container">
-    <div class="cta-content">
-      <h2>Discutons de Votre Projet</h2>
-      <p>Nos experts sont à votre disposition pour analyser vos besoins et vous proposer la solution idéale</p>
-      <div class="cta-buttons">
-        <p-button
-          label="Demander un Devis"
-          icon="pi pi-send"
-          styleClass="p-button-lg"
-          routerLink="/contact">
-        </p-button>
-        <p-button
-          label="Prendre RDV"
-          icon="pi pi-calendar"
-          styleClass="p-button-outlined p-button-lg">
-        </p-button>
-      </div>
+<section class="py-20 md:py-28 bg-gradient-to-br from-dark-800 to-dark-950 text-white text-center">
+  <div class="container-custom max-w-4xl space-y-8">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+      Discutons de Votre Projet
+    </h2>
+    <p class="text-lg md:text-xl text-dark-200">
+      Nos experts sont à votre disposition pour analyser vos besoins et vous proposer la solution idéale
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+      <p-button
+        label="Demander un Devis"
+        icon="pi pi-send"
+        styleClass="p-button-lg"
+        routerLink="/contact">
+      </p-button>
+      <p-button
+        label="Prendre RDV"
+        icon="pi pi-calendar"
+        styleClass="p-button-outlined p-button-lg">
+      </p-button>
     </div>
   </div>
 </section>

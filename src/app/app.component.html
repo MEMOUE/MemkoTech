@@ -1,110 +1,166 @@
-<header class="header">
-  <nav class="nav-container">
-    <div class="logo">
-      <h2 routerLink="/">
-        MemkoTech
-      </h2>
-    </div>
-
-    <!-- Menu hamburger pour mobile -->
-    <button
-      class="mobile-menu-toggle"
-      (click)="toggleMobileMenu()"
-      [class.active]="isMobileMenuOpen"
-      aria-label="Menu de navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Menu de navigation -->
-    <div class="nav-menu-wrapper" [class.open]="isMobileMenuOpen">
-      <ul class="nav-menu">
-        <li>
-          <a routerLink="/"
-             routerLinkActive="active"
-             [routerLinkActiveOptions]="{exact: true}"
-             (click)="closeMobileMenu()">
-            Accueil
-          </a>
-        </li>
-        <li>
-          <a routerLink="/services"
-             routerLinkActive="active"
-             (click)="closeMobileMenu()">
-            Services
-          </a>
-        </li>
-        <li>
-          <a routerLink="/about"
-             routerLinkActive="active"
-             (click)="closeMobileMenu()">
-            À propos
-          </a>
-        </li>
-        <li>
-          <a routerLink="/contact"
-             routerLinkActive="active"
-             (click)="closeMobileMenu()">
-            Contact
-          </a>
-        </li>
-      </ul>
-
-      <div class="nav-cta">
-        <p-button
-          label="Devis gratuit"
-          icon="pi pi-phone"
-          styleClass="p-button-outlined"
-          routerLink="/contact"
-          (click)="closeMobileMenu()">
-        </p-button>
+<header class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-primary-700 backdrop-blur-lg border-b border-white/10 shadow-xl">
+  <nav class="container-custom">
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <div class="logo cursor-pointer transition-transform hover:scale-105" routerLink="/">
+        <h2 class="text-white font-bold text-2xl md:text-3xl m-0 whitespace-nowrap">
+          MemkoTech
+        </h2>
       </div>
-    </div>
 
-    <!-- Overlay pour fermer le menu -->
-    <div class="mobile-menu-overlay"
-         [class.show]="isMobileMenuOpen"
-         (click)="closeMobileMenu()">
+      <!-- Menu hamburger pour mobile -->
+      <button
+        class="md:hidden flex flex-col justify-around w-8 h-8 bg-transparent border-none cursor-pointer p-0 z-[1001]"
+        (click)="toggleMobileMenu()"
+        [class.active]="isMobileMenuOpen"
+        aria-label="Menu de navigation">
+        <span class="w-7 h-0.5 bg-white rounded-sm transition-all duration-300"
+              [class.rotate-45]="isMobileMenuOpen"
+              [class.translate-x-1.5]="isMobileMenuOpen"
+              [class.translate-y-2]="isMobileMenuOpen"></span>
+        <span class="w-7 h-0.5 bg-white rounded-sm transition-all duration-300"
+              [class.opacity-0]="isMobileMenuOpen"
+              [class.scale-0]="isMobileMenuOpen"></span>
+        <span class="w-7 h-0.5 bg-white rounded-sm transition-all duration-300"
+              [class.-rotate-45]="isMobileMenuOpen"
+              [class.-translate-x-1.5]="isMobileMenuOpen"
+              [class.-translate-y-2]="isMobileMenuOpen"></span>
+      </button>
+
+      <!-- Menu de navigation -->
+      <div class="fixed md:static top-0 right-0 w-72 md:w-auto h-screen md:h-auto bg-gradient-to-b md:bg-none from-primary-600 to-primary-700 md:backdrop-blur-none flex flex-col md:flex-row items-stretch md:items-center justify-start md:justify-center gap-0 md:gap-8 pt-24 md:pt-0 pb-8 md:pb-0 transition-all duration-400 z-[999] shadow-2xl md:shadow-none overflow-y-auto"
+           [class.-right-full]="!isMobileMenuOpen"
+           [class.right-0]="isMobileMenuOpen">
+
+        <ul class="flex flex-col md:flex-row list-none m-0 p-0 gap-0 md:gap-6 items-stretch md:items-center w-full md:w-auto px-6 md:px-0">
+          <li class="w-full md:w-auto border-b border-white/10 md:border-0">
+            <a routerLink="/"
+               routerLinkActive="!bg-white/20"
+               [routerLinkActiveOptions]="{exact: true}"
+               (click)="closeMobileMenu()"
+               class="block text-white no-underline font-medium py-4 px-4 md:px-3 rounded-lg transition-all duration-300 hover:bg-white/20 hover:pl-6 md:hover:pl-3 md:hover:transform md:hover:-translate-y-0.5 text-base whitespace-nowrap">
+              Accueil
+            </a>
+          </li>
+          <li class="w-full md:w-auto border-b border-white/10 md:border-0">
+            <a routerLink="/services"
+               routerLinkActive="!bg-white/20"
+               (click)="closeMobileMenu()"
+               class="block text-white no-underline font-medium py-4 px-4 md:px-3 rounded-lg transition-all duration-300 hover:bg-white/20 hover:pl-6 md:hover:pl-3 md:hover:transform md:hover:-translate-y-0.5 text-base whitespace-nowrap">
+              Services
+            </a>
+          </li>
+          <li class="w-full md:w-auto border-b border-white/10 md:border-0">
+            <a routerLink="/about"
+               routerLinkActive="!bg-white/20"
+               (click)="closeMobileMenu()"
+               class="block text-white no-underline font-medium py-4 px-4 md:px-3 rounded-lg transition-all duration-300 hover:bg-white/20 hover:pl-6 md:hover:pl-3 md:hover:transform md:hover:-translate-y-0.5 text-base whitespace-nowrap">
+              À propos
+            </a>
+          </li>
+          <li class="w-full md:w-auto border-b border-white/10 md:border-0">
+            <a routerLink="/contact"
+               routerLinkActive="!bg-white/20"
+               (click)="closeMobileMenu()"
+               class="block text-white no-underline font-medium py-4 px-4 md:px-3 rounded-lg transition-all duration-300 hover:bg-white/20 hover:pl-6 md:hover:pl-3 md:hover:transform md:hover:-translate-y-0.5 text-base whitespace-nowrap">
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- CTA Button -->
+        <div class="mt-8 md:mt-0 px-6 md:px-0">
+          <p-button
+            label="Devis gratuit"
+            icon="pi pi-phone"
+            styleClass="p-button-outlined"
+            routerLink="/contact"
+            (click)="closeMobileMenu()"
+            class="w-full md:w-auto">
+          </p-button>
+        </div>
+      </div>
+
+      <!-- Overlay mobile -->
+      <div class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 transition-opacity duration-300 z-[998] md:hidden"
+           [class.opacity-100]="isMobileMenuOpen"
+           [class.pointer-events-none]="!isMobileMenuOpen"
+           [class.pointer-events-auto]="isMobileMenuOpen"
+           (click)="closeMobileMenu()">
+      </div>
     </div>
   </nav>
 </header>
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
-<main>
+
+<main class="mt-20 min-h-screen">
   <router-outlet></router-outlet>
 </main>
 
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>MemkoTech</h3>
-      <p>Excellence technologique et innovation au service de votre entreprise.</p>
-      <div class="social-links">
-        <i class="pi pi-facebook"></i>
-        <i class="pi pi-twitter"></i>
-        <i class="pi pi-linkedin"></i>
-        <i class="pi pi-instagram"></i>
+<footer class="bg-gradient-to-b from-dark-900 to-dark-950 text-white py-12">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <!-- Section 1: À propos -->
+      <div class="space-y-4">
+        <h3 class="text-primary-400 text-2xl font-bold mb-4">MemkoTech</h3>
+        <p class="text-dark-300 opacity-90 text-sm leading-relaxed">
+          Excellence technologique et innovation au service de votre entreprise.
+        </p>
+        <div class="flex gap-4 mt-6">
+          <i class="pi pi-facebook text-2xl cursor-pointer text-dark-400 transition-all hover:text-primary-400 hover:-translate-y-1"></i>
+          <i class="pi pi-twitter text-2xl cursor-pointer text-dark-400 transition-all hover:text-primary-400 hover:-translate-y-1"></i>
+          <i class="pi pi-linkedin text-2xl cursor-pointer text-dark-400 transition-all hover:text-primary-400 hover:-translate-y-1"></i>
+          <i class="pi pi-instagram text-2xl cursor-pointer text-dark-400 transition-all hover:text-primary-400 hover:-translate-y-1"></i>
+        </div>
+      </div>
+
+      <!-- Section 2: Services -->
+      <div class="space-y-4">
+        <h4 class="text-white text-xl font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li class="text-dark-300 text-sm py-1 opacity-80 hover:opacity-100 hover:text-primary-400 transition-all cursor-pointer">
+            Développement Web
+          </li>
+          <li class="text-dark-300 text-sm py-1 opacity-80 hover:opacity-100 hover:text-primary-400 transition-all cursor-pointer">
+            Applications Mobile
+          </li>
+          <li class="text-dark-300 text-sm py-1 opacity-80 hover:opacity-100 hover:text-primary-400 transition-all cursor-pointer">
+            Infrastructure Cloud
+          </li>
+          <li class="text-dark-300 text-sm py-1 opacity-80 hover:opacity-100 hover:text-primary-400 transition-all cursor-pointer">
+            Cybersécurité
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3: Contact -->
+      <div class="space-y-4">
+        <h4 class="text-white text-xl font-semibold mb-4">Contact</h4>
+        <p class="text-dark-300 text-sm mb-2 flex items-center gap-2">
+          <i class="pi pi-phone text-primary-400"></i>
+          +221 78 488 67 52
+        </p>
+        <p class="text-dark-300 text-sm mb-2 flex items-center gap-2">
+          <i class="pi pi-envelope text-primary-400"></i>
+          contact&#64;memkotech.com
+        </p>
+        <p class="text-dark-300 text-sm flex items-center gap-2">
+          <i class="pi pi-map-marker text-primary-400"></i>
+          Dakar, Sénégal
+        </p>
+      </div>
+
+      <!-- Section 4: Horaires -->
+      <div class="space-y-4">
+        <h4 class="text-white text-xl font-semibold mb-4">Horaires</h4>
+        <p class="text-dark-300 text-sm mb-2">Lundi - Vendredi: 8h - 18h</p>
+        <p class="text-dark-300 text-sm mb-2">Samedi: 9h - 13h</p>
+        <p class="text-dark-300 text-sm italic opacity-75">Support 24/7 pour clients premium</p>
       </div>
     </div>
-    <div class="footer-section">
-      <h4>Services</h4>
-      <ul>
-        <li>Développement Web</li>
-        <li>Applications Mobile</li>
-        <li>Infrastructure Cloud</li>
-        <li>Cybersécurité</li>
-      </ul>
+
+    <!-- Copyright -->
+    <div class="text-center pt-8 mt-8 border-t border-white/10 opacity-70">
+      <p class="text-sm text-dark-300">&copy; 2025 MemkoTech. Tous droits réservés.</p>
     </div>
-    <div class="footer-section">
-      <h4>Contact</h4>
-      <p><i class="pi pi-phone"></i>+221 78 488 67 52</p>
-      <p><i class="pi pi-envelope"></i> contact&#64;memkotech.com</p>
-      <p><i class="pi pi-map-marker"></i> Dakar, Sénégal</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 MemkoTech. Tous droits réservés.</p>
   </div>
 </footer>

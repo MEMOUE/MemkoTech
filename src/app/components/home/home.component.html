@@ -1,241 +1,372 @@
 <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Votre Partenaire Technologique de Confiance</h1>
-          <p class="hero-subtitle">
-            MemkoTech transforme vos idées en solutions technologiques performantes.
-            De la conception à la maintenance, nous accompagnons votre croissance digitale.
-          </p>
-          <div class="hero-buttons">
-            <p-button
-              label="Nos Services"
-              icon="pi pi-arrow-right"
-              styleClass="p-button-lg"
-              routerLink="/services">
-            </p-button>
-            <p-button
-              label="Contactez-nous"
-              icon="pi pi-phone"
-              styleClass="p-button-outlined p-button-lg"
-              routerLink="/contact">
-            </p-button>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="floating-card">
-            <i class="pi pi-code"></i>
-            <span>Développement</span>
-          </div>
-          <div class="floating-card">
-            <i class="pi pi-cloud"></i>
-            <span>Cloud</span>
-          </div>
-          <div class="floating-card">
-            <i class="pi pi-shield"></i>
-            <span>Sécurité</span>
-          </div>
-          <div class="floating-card">
-            <i class="pi pi-mobile"></i>
-            <span>Mobile</span>
-          </div>
-          <div class="floating-card">
-            <i class="pi pi-reddit"></i>
-            <span>IA</span>
-          </div>
+<section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-dark-900 text-white py-24 md:py-32 lg:py-40 min-h-[80vh] flex items-center overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <div class="container-custom relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Texte Hero -->
+      <div class="text-center lg:text-left space-y-6 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          Votre Partenaire <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-primary-200">
+            Technologique
+          </span> de Confiance
+        </h1>
+
+        <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0">
+          MemkoTech transforme vos idées en solutions technologiques performantes.
+          De la conception à la maintenance, nous accompagnons votre croissance digitale.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+          <p-button
+            label="Nos Services"
+            icon="pi pi-arrow-right"
+            styleClass="p-button-lg"
+            routerLink="/services"
+            class="shadow-xl hover:shadow-2xl transition-shadow">
+          </p-button>
+          <p-button
+            label="Contactez-nous"
+            icon="pi pi-phone"
+            styleClass="p-button-outlined p-button-lg"
+            routerLink="/contact">
+          </p-button>
         </div>
       </div>
-    </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <h3>15+</h3>
-            <p>Projets Réalisés</p>
-          </div>
-          <div class="stat-item">
-            <h3>98%</h3>
-            <p>Satisfaction Client</p>
-          </div>
-          <div class="stat-item">
-            <h3>5+</h3>
-            <p>Années d'Expérience</p>
-          </div>
-          <div class="stat-item">
-            <h3>24/7</h3>
-            <p>Support Technique</p>
-          </div>
+      <!-- Visual Hero avec cartes flottantes -->
+      <div class="relative h-96 lg:h-[500px] mt-8 lg:mt-0">
+        <!-- Carte 1 -->
+        <div class="absolute top-[5%] left-[10%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm">
+          <i class="pi pi-code text-3xl md:text-4xl text-primary-300"></i>
+          <span class="text-sm md:text-base font-semibold">Développement</span>
+        </div>
+
+        <!-- Carte 2 -->
+        <div class="absolute top-[10%] right-[10%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm" style="animation-delay: 1.5s;">
+          <i class="pi pi-cloud text-3xl md:text-4xl text-primary-300"></i>
+          <span class="text-sm md:text-base font-semibold">Cloud</span>
+        </div>
+
+        <!-- Carte 3 -->
+        <div class="absolute bottom-[35%] left-[15%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm" style="animation-delay: 3s;">
+          <i class="pi pi-shield text-3xl md:text-4xl text-primary-300"></i>
+          <span class="text-sm md:text-base font-semibold">Sécurité</span>
+        </div>
+
+        <!-- Carte 4 -->
+        <div class="absolute bottom-[35%] right-[15%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm" style="animation-delay: 4.5s;">
+          <i class="pi pi-mobile text-3xl md:text-4xl text-primary-300"></i>
+          <span class="text-sm md:text-base font-semibold">Mobile</span>
+        </div>
+
+        <!-- Carte centrale IA -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-36 md:h-36 bg-primary-500/20 backdrop-blur-lg border-2 border-primary-300/40 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-pulse-slow shadow-glow-blue">
+          <i class="pi pi-reddit text-4xl md:text-5xl text-primary-200"></i>
+          <span class="text-base md:text-lg font-bold">IA</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Services Preview -->
-    <section class="services-preview">
-      <div class="container">
-        <div class="section-header">
-          <h2>Nos Domaines d'Expertise</h2>
-          <p>Des solutions complètes pour tous vos besoins technologiques</p>
-        </div>
-
-        <div class="services-grid">
-          <p-card class="service-card">
-            <ng-template pTemplate="header">
-              <div class="service-icon">
-                <i class="pi pi-desktop"></i>
-              </div>
-            </ng-template>
-            <h3>Développement Web</h3>
-            <p>Applications web modernes, responsives et performantes avec les dernières technologies.</p>
-            <ul>
-              <li>React, Angular, Vue.js</li>
-              <li>Node.js, Java, Python, PHP</li>
-              <li>Bases de données</li>
-            </ul>
-          </p-card>
-
-          <p-card class="service-card">
-            <ng-template pTemplate="header">
-              <div class="service-icon">
-                <i class="pi pi-mobile"></i>
-              </div>
-            </ng-template>
-            <h3>Applications Mobile</h3>
-            <p>Applications natives et cross-platform pour iOS et Android.</p>
-            <ul>
-              <li>React Native, Flutter</li>
-              <li>iOS & Android natif</li>
-              <li>PWA</li>
-            </ul>
-          </p-card>
-
-          <p-card class="service-card">
-            <ng-template pTemplate="header">
-              <div class="service-icon">
-                <i class="pi pi-cloud"></i>
-              </div>
-            </ng-template>
-            <h3>Infrastructure Cloud</h3>
-            <p>Migration, déploiement et gestion d'infrastructures cloud scalables.</p>
-            <ul>
-              <li>AWS, Azure, GCP</li>
-              <li>DevOps & CI/CD</li>
-              <li>Conteneurisation</li>
-            </ul>
-          </p-card>
-
-          <p-card class="service-card">
-            <ng-template pTemplate="header">
-              <div class="service-icon">
-                <i class="pi pi-shield"></i>
-              </div>
-            </ng-template>
-            <h3>Cybersécurité</h3>
-            <p>Protection de vos données et systèmes contre les menaces cybernétiques.</p>
-            <ul>
-              <li>Audit de sécurité</li>
-              <li>Pentesting</li>
-              <li>Formation équipes</li>
-            </ul>
-          </p-card>
-
-          <p-card class="service-card">
-            <ng-template pTemplate="header">
-              <div class="service-icon">
-                <i class="pi pi-cog"></i>
-              </div>
-            </ng-template>
-            <h3>Maintenance & Support</h3>
-            <p>Maintenance préventive et support technique 24/7 pour vos systèmes.</p>
-            <ul>
-              <li>Monitoring 24/7</li>
-              <li>Mises à jour</li>
-              <li>Support technique</li>
-            </ul>
-          </p-card>
-
-          <p-card class="service-card">
-            <ng-template pTemplate="header">
-              <div class="service-icon">
-                <i class="pi pi-chart-line"></i>
-              </div>
-            </ng-template>
-            <h3>Consulting IT</h3>
-            <p>Conseils stratégiques pour optimiser votre infrastructure technologique.</p>
-            <ul>
-              <li>Audit technique</li>
-              <li>Stratégie digitale</li>
-              <li>Transformation</li>
-            </ul>
-          </p-card>
-        </div>
+<!-- Stats Section -->
+<section class="bg-dark-50 py-16 md:py-20">
+  <div class="container-custom">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">15+</h3>
+        <p class="text-dark-600 font-medium">Projets Réalisés</p>
       </div>
-    </section>
+      <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">98%</h3>
+        <p class="text-dark-600 font-medium">Satisfaction Client</p>
+      </div>
+      <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">5+</h3>
+        <p class="text-dark-600 font-medium">Années d'Expérience</p>
+      </div>
+      <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">24/7</h3>
+        <p class="text-dark-600 font-medium">Support Technique</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose-us">
-      <div class="container">
-        <div class="section-header">
-          <h2>Pourquoi Choisir MemkoTech ?</h2>
-          <p>Notre approche unique pour votre succès</p>
-        </div>
+<!-- Services Preview -->
+<section class="py-20 md:py-28 bg-white">
+  <div class="container-custom">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900">
+        Nos Domaines d'Expertise
+      </h2>
+      <p class="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
+        Des solutions complètes pour tous vos besoins technologiques
+      </p>
+    </div>
 
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="pi pi-star"></i>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Service Card 1 -->
+      <p-card class="hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+        <ng-template pTemplate="header">
+          <div class="flex justify-center pt-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
+              <i class="pi pi-desktop text-3xl"></i>
             </div>
-            <h3>Excellence Technique</h3>
-            <p>Une équipe d'experts passionnés utilisant les meilleures pratiques et technologies de pointe.</p>
           </div>
+        </ng-template>
+        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Développement Web</h3>
+        <p class="text-dark-600 text-center mb-6">
+          Applications web modernes, responsives et performantes avec les dernières technologies.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            React, Angular, Vue.js
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Node.js, Java, Python, PHP
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Bases de données
+          </li>
+        </ul>
+      </p-card>
 
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="pi pi-users"></i>
+      <!-- Service Card 2 -->
+      <p-card class="hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+        <ng-template pTemplate="header">
+          <div class="flex justify-center pt-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
+              <i class="pi pi-mobile text-3xl"></i>
             </div>
-            <h3>Approche Collaborative</h3>
-            <p>Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins spécifiques.</p>
           </div>
+        </ng-template>
+        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Applications Mobile</h3>
+        <p class="text-dark-600 text-center mb-6">
+          Applications natives et cross-platform pour iOS et Android.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            React Native, Flutter
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            iOS & Android natif
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            PWA
+          </li>
+        </ul>
+      </p-card>
 
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="pi pi-clock"></i>
+      <!-- Service Card 3 -->
+      <p-card class="hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+        <ng-template pTemplate="header">
+          <div class="flex justify-center pt-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
+              <i class="pi pi-cloud text-3xl"></i>
             </div>
-            <h3>Livraison Rapide</h3>
-            <p>Méthodes agiles et processus optimisés pour des délais de livraison respectés.</p>
           </div>
+        </ng-template>
+        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Infrastructure Cloud</h3>
+        <p class="text-dark-600 text-center mb-6">
+          Migration, déploiement et gestion d'infrastructures cloud scalables.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            AWS, Azure, GCP
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            DevOps & CI/CD
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Conteneurisation
+          </li>
+        </ul>
+      </p-card>
 
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="pi pi-heart"></i>
+      <!-- Service Card 4 -->
+      <p-card class="hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+        <ng-template pTemplate="header">
+          <div class="flex justify-center pt-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
+              <i class="pi pi-shield text-3xl"></i>
             </div>
-            <h3>Support Dédié</h3>
-            <p>Un accompagnement personnalisé avant, pendant et après la mise en production.</p>
           </div>
+        </ng-template>
+        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Cybersécurité</h3>
+        <p class="text-dark-600 text-center mb-6">
+          Protection de vos données et systèmes contre les menaces cybernétiques.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Audit de sécurité
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Pentesting
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Formation équipes
+          </li>
+        </ul>
+      </p-card>
+
+      <!-- Service Card 5 -->
+      <p-card class="hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+        <ng-template pTemplate="header">
+          <div class="flex justify-center pt-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
+              <i class="pi pi-cog text-3xl"></i>
+            </div>
+          </div>
+        </ng-template>
+        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Maintenance & Support</h3>
+        <p class="text-dark-600 text-center mb-6">
+          Maintenance préventive et support technique 24/7 pour vos systèmes.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Monitoring 24/7
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Mises à jour
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Support technique
+          </li>
+        </ul>
+      </p-card>
+
+      <!-- Service Card 6 -->
+      <p-card class="hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+        <ng-template pTemplate="header">
+          <div class="flex justify-center pt-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
+              <i class="pi pi-chart-line text-3xl"></i>
+            </div>
+          </div>
+        </ng-template>
+        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Consulting IT</h3>
+        <p class="text-dark-600 text-center mb-6">
+          Conseils stratégiques pour optimiser votre infrastructure technologique.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Audit technique
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Stratégie digitale
+          </li>
+          <li class="flex items-center text-dark-700 text-sm">
+            <i class="pi pi-check text-green-600 mr-2"></i>
+            Transformation
+          </li>
+        </ul>
+      </p-card>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-20 md:py-28 bg-gradient-to-br from-dark-50 to-blue-50">
+  <div class="container-custom">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900">
+        Pourquoi Choisir MemkoTech ?
+      </h2>
+      <p class="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
+        Notre approche unique pour votre succès
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow-blue-sm">
+          <i class="pi pi-star text-2xl"></i>
         </div>
+        <h3 class="text-xl font-bold text-dark-900 mb-4">Excellence Technique</h3>
+        <p class="text-dark-600">
+          Une équipe d'experts passionnés utilisant les meilleures pratiques et technologies de pointe.
+        </p>
       </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Prêt à Transformer Votre Vision en Réalité ?</h2>
-          <p>Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé</p>
-          <div class="cta-buttons">
-            <p-button
-              label="Demander un Devis"
-              icon="pi pi-send"
-              styleClass="p-button-lg"
-              routerLink="/contact">
-            </p-button>
-            <p-button
-              label="Voir nos Réalisations"
-              icon="pi pi-eye"
-              styleClass="p-button-outlined p-button-lg">
-            </p-button>
-          </div>
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow-blue-sm">
+          <i class="pi pi-users text-2xl"></i>
         </div>
+        <h3 class="text-xl font-bold text-dark-900 mb-4">Approche Collaborative</h3>
+        <p class="text-dark-600">
+          Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins spécifiques.
+        </p>
       </div>
-    </section>
+
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow-blue-sm">
+          <i class="pi pi-clock text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-dark-900 mb-4">Livraison Rapide</h3>
+        <p class="text-dark-600">
+          Méthodes agiles et processus optimisés pour des délais de livraison respectés.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow-blue-sm">
+          <i class="pi pi-heart text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-dark-900 mb-4">Support Dédié</h3>
+        <p class="text-dark-600">
+          Un accompagnement personnalisé avant, pendant et après la mise en production.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 md:py-28 bg-gradient-to-br from-dark-800 to-dark-950 text-white">
+  <div class="container-custom text-center">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+        Prêt à Transformer Votre Vision en Réalité ?
+      </h2>
+      <p class="text-lg md:text-xl text-dark-200">
+        Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <p-button
+          label="Demander un Devis"
+          icon="pi pi-send"
+          styleClass="p-button-lg"
+          routerLink="/contact">
+        </p-button>
+        <p-button
+          label="Voir nos Réalisations"
+          icon="pi pi-eye"
+          styleClass="p-button-outlined p-button-lg">
+        </p-button>
+      </div>
+    </div>
+  </div>
+</section>
