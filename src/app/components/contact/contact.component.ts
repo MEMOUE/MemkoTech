@@ -1,357 +1,333 @@
-// import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { ButtonModule } from 'primeng/button';
-// import { CardModule } from 'primeng/card';
-// import { InputTextModule } from 'primeng/inputtext';
-// import { InputTextarea } from 'primeng/inputtextarea';
-// import { DropdownModule } from 'primeng/dropdown';
-// import { MessageService } from 'primeng/api';
-// import { ToastModule } from 'primeng/toast';
-//
-// @Component({
-//   selector: 'app-contact',
-//   standalone: true,
-//   imports: [
-//     CommonModule,
-//     ReactiveFormsModule,
-//     ButtonModule,
-//     CardModule,
-//     InputTextModule,
-//     InputTextarea,
-//     DropdownModule,
-//     ToastModule
-//   ],
-//   providers: [MessageService],
-//   templateUrl: './contact.component.html',
-//   styleUrls: ['./contact.component.css']
-// })
-// export class ContactComponent {
-//   contactForm: FormGroup;
-//   isSubmitting = false;
-//
-//   services = [
-//     { label: 'Développement Web', value: 'web' },
-//     { label: 'Application Mobile', value: 'mobile' },
-//     { label: 'Infrastructure Cloud', value: 'cloud' },
-//     { label: 'Cybersécurité', value: 'security' },
-//     { label: 'Maintenance & Support', value: 'maintenance' },
-//     { label: 'Consulting IT', value: 'consulting' },
-//     { label: 'Autre', value: 'other' }
-//   ];
-//
-//   budgetRanges = [
-//     { label: 'Moins de 1M FCFA', value: '<1M' },
-//     { label: '1M - 5M FCFA', value: '1M-5M' },
-//     { label: '5M - 10M FCFA', value: '5M-10M' },
-//     { label: '10M - 25M FCFA', value: '10M-25M' },
-//     { label: 'Plus de 25M FCFA', value: '>25M' },
-//     { label: 'À discuter', value: 'discuss' }
-//   ];
-//
-//   quickFAQ = [
-//     {
-//       question: 'Quel est votre délai de réponse ?',
-//       answer: 'Nous répondons à toutes les demandes sous 24h maximum.'
-//     },
-//     {
-//       question: 'Le devis est-il gratuit ?',
-//       answer: 'Oui, tous nos devis sont gratuits et sans engagement.'
-//     },
-//     {
-//       question: 'Travaillez-vous à distance ?',
-//       answer: 'Oui, nous collaborons avec des clients partout en Afrique.'
-//     }
-//   ];
-//
-//   processSteps = [
-//     {
-//       title: 'Premier Contact',
-//       description: 'Vous remplissez le formulaire ou nous contactez directement',
-//       duration: 'Immédiat'
-//     },
-//     {
-//       title: 'Analyse des Besoins',
-//       description: 'Entretien détaillé pour comprendre vos objectifs',
-//       duration: '24-48h'
-//     },
-//     {
-//       title: 'Proposition & Devis',
-//       description: 'Présentation de la solution et estimation des coûts',
-//       duration: '3-5 jours'
-//     },
-//     {
-//       title: 'Validation & Planning',
-//       description: 'Signature du contrat et planification du projet',
-//       duration: '1-2 jours'
-//     },
-//     {
-//       title: 'Développement',
-//       description: 'Réalisation du projet avec suivi régulier',
-//       duration: 'Variable'
-//     }
-//   ];
-//
-//   constructor(
-//     private fb: FormBuilder,
-//     private messageService: MessageService
-//   ) {
-//     this.contactForm = this.fb.group({
-//       firstName: ['', Validators.required],
-//       lastName: ['', Validators.required],
-//       email: ['', [Validators.required, Validators.email]],
-//       phone: [''],
-//       company: [''],
-//       service: ['', Validators.required],
-//       project: ['', Validators.required],
-//       budget: ['']
-//     });
-//   }
-//
-//   onSubmit() {
-//     if (this.contactForm.valid) {
-//       this.isSubmitting = true;
-//
-//       // Simuler l'envoi du formulaire
-//       setTimeout(() => {
-//         this.messageService.add({
-//           severity: 'success',
-//           summary: 'Demande envoyée !',
-//           detail: 'Nous vous recontacterons dans les plus brefs délais.',
-//           life: 5000
-//         });
-//
-//         this.contactForm.reset();
-//         this.isSubmitting = false;
-//       }, 2000);
-//     } else {
-//       this.messageService.add({
-//         severity: 'error',
-//         summary: 'Erreur',
-//         detail: 'Veuillez corriger les erreurs dans le formulaire.',
-//         life: 3000
-//       });
-//     }
-//   }
-//
-//   openWhatsApp() {
-//     window.open('https://wa.me/221701234567?text=Bonjour MemkoTech, je souhaite discuter d\'un projet.', '_blank');
-//   }
-// }
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextarea } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { DividerModule } from 'primeng/divider';
+import { AccordionModule } from 'primeng/accordion';
+import { TagModule } from 'primeng/tag';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import emailjs from '@emailjs/browser';
+import { environment } from '../../../environments/environment';
 
+interface Service {
+  label: string;
+  value: string;
+  icon: string;
+  description: string;
+}
 
+interface BudgetRange {
+  label: string;
+  value: string;
+}
 
+interface FAQ {
+  question: string;
+  answer: string;
+}
 
- import { Component } from '@angular/core';
- import { CommonModule } from '@angular/common';
- import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
- import { ButtonModule } from 'primeng/button';
- import { CardModule } from 'primeng/card';
- import { InputTextModule } from 'primeng/inputtext';
- import { InputTextarea } from 'primeng/inputtextarea';
- import { DropdownModule } from 'primeng/dropdown';
- import { MessageService } from 'primeng/api';
- import { ToastModule } from 'primeng/toast';
- import emailjs from '@emailjs/browser';
- import {environment} from '../../../environments/environment';
-
+interface ProcessStep {
+  title: string;
+  description: string;
+  duration: string;
+  icon: string;
+}
 
 @Component({
-   selector: 'app-contact',
-   standalone: true,
-   imports: [
-     CommonModule,
-     ReactiveFormsModule,
-     ButtonModule,
-     CardModule,
-     InputTextModule,
-     InputTextarea,
-     DropdownModule,
-     ToastModule
-   ],
-   providers: [MessageService],
-   templateUrl: './contact.component.html',
-   styleUrls: ['./contact.component.css']
- })
- export class ContactComponent {
-   contactForm: FormGroup;
-   isSubmitting = false;
+  selector: 'app-contact',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    CardModule,
+    InputTextModule,
+    InputTextarea,
+    DropdownModule,
+    DividerModule,
+    AccordionModule,
+    TagModule,
+    ToastModule
+  ],
+  providers: [MessageService],
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
+})
+export class ContactComponent implements OnInit {
+  contactForm!: FormGroup;
+  isSubmitting = false;
 
-   // Configuration EmailJS
-   private readonly EMAIL_SERVICE_ID = 'service_qwm066g';
-   private readonly EMAIL_TEMPLATE_ID = 'template_tap28lk';
-   private readonly EMAIL_PUBLIC_KEY = 'Y52JjNYYnyag9RqZZ';
+  services: Service[] = [
+    {
+      label: 'Développement Web',
+      value: 'web',
+      icon: 'pi pi-globe',
+      description: 'Sites web, applications, e-commerce'
+    },
+    {
+      label: 'Application Mobile',
+      value: 'mobile',
+      icon: 'pi pi-mobile',
+      description: 'iOS, Android, Flutter, React Native'
+    },
+    {
+      label: 'Infrastructure Cloud',
+      value: 'cloud',
+      icon: 'pi pi-cloud',
+      description: 'AWS, Azure, Docker, Kubernetes'
+    },
+    {
+      label: 'Cybersécurité',
+      value: 'security',
+      icon: 'pi pi-shield',
+      description: 'Audit, protection, conformité'
+    },
+    {
+      label: 'Intelligence Artificielle',
+      value: 'ia',
+      icon: 'pi pi-bolt',
+      description: 'ML, NLP, Computer Vision'
+    },
+    {
+      label: 'Maintenance & Support',
+      value: 'maintenance',
+      icon: 'pi pi-wrench',
+      description: 'Support technique, mises à jour'
+    },
+    {
+      label: 'Consulting IT',
+      value: 'consulting',
+      icon: 'pi pi-briefcase',
+      description: 'Conseil, stratégie, transformation digitale'
+    },
+    {
+      label: 'Autre',
+      value: 'other',
+      icon: 'pi pi-plus-circle',
+      description: 'Projet spécifique à discuter'
+    }
+  ];
 
-   services = [
-     { label: 'Développement Web', value: 'web' },
-     { label: 'Application Mobile', value: 'mobile' },
-     { label: 'Infrastructure Cloud', value: 'cloud' },
-     { label: 'Cybersécurité', value: 'security' },
-     { label: 'Intelligence Artificielle', value: 'ia' },
-     { label: 'Maintenance & Support', value: 'maintenance' },
-     { label: 'Consulting IT', value: 'consulting' },
-     { label: 'Autre', value: 'other' }
-   ];
+  budgetRanges: BudgetRange[] = [
+    { label: 'Moins de 1M FCFA', value: '<1M' },
+    { label: '1M - 5M FCFA', value: '1M-5M' },
+    { label: '5M - 10M FCFA', value: '5M-10M' },
+    { label: '10M - 25M FCFA', value: '10M-25M' },
+    { label: 'Plus de 25M FCFA', value: '>25M' },
+    { label: 'À discuter', value: 'discuss' }
+  ];
 
-   budgetRanges = [
-     { label: 'Moins de 1M FCFA', value: '<1M' },
-     { label: '1M - 5M FCFA', value: '1M-5M' },
-     { label: '5M - 10M FCFA', value: '5M-10M' },
-     { label: '10M - 25M FCFA', value: '10M-25M' },
-     { label: 'Plus de 25M FCFA', value: '>25M' },
-     { label: 'À discuter', value: 'discuss' }
-   ];
+  quickFAQ: FAQ[] = [
+    {
+      question: 'Quel est votre délai de réponse ?',
+      answer: 'Nous répondons à toutes les demandes sous 24h maximum, souvent bien plus rapidement pour les demandes urgentes.'
+    },
+    {
+      question: 'Le devis est-il gratuit ?',
+      answer: 'Oui, tous nos devis sont gratuits et sans engagement. Nous étudions votre projet en détail avant de vous proposer une solution adaptée.'
+    },
+    {
+      question: 'Travaillez-vous à distance ?',
+      answer: 'Oui, nous collaborons avec des clients partout en Afrique et dans le monde. Nous organisons des réunions virtuelles régulières pour assurer un suivi optimal.'
+    },
+    {
+      question: 'Proposez-vous un accompagnement post-livraison ?',
+      answer: 'Absolument ! Nous offrons différentes formules de maintenance et support technique adaptées à vos besoins.'
+    }
+  ];
 
-   quickFAQ = [
-     {
-       question: 'Quel est votre délai de réponse ?',
-       answer: 'Nous répondons à toutes les demandes sous 24h maximum.'
-     },
-     {
-       question: 'Le devis est-il gratuit ?',
-       answer: 'Oui, tous nos devis sont gratuits et sans engagement.'
-     },
-     {
-       question: 'Travaillez-vous à distance ?',
-       answer: 'Oui, nous collaborons avec des clients partout en Afrique.'
-     }
-   ];
+  processSteps: ProcessStep[] = [
+    {
+      title: 'Premier Contact',
+      description: 'Vous remplissez le formulaire ou nous contactez directement',
+      duration: 'Immédiat',
+      icon: 'pi pi-comment'
+    },
+    {
+      title: 'Analyse des Besoins',
+      description: 'Entretien détaillé pour comprendre vos objectifs et contraintes',
+      duration: '24-48h',
+      icon: 'pi pi-search'
+    },
+    {
+      title: 'Proposition & Devis',
+      description: 'Présentation de la solution technique et estimation des coûts',
+      duration: '3-5 jours',
+      icon: 'pi pi-file-edit'
+    },
+    {
+      title: 'Validation & Planning',
+      description: 'Signature du contrat et planification détaillée du projet',
+      duration: '1-2 jours',
+      icon: 'pi pi-check-circle'
+    },
+    {
+      title: 'Développement',
+      description: 'Réalisation du projet avec suivi régulier et livraisons itératives',
+      duration: 'Variable',
+      icon: 'pi pi-code'
+    }
+  ];
 
-   processSteps = [
-     {
-       title: 'Premier Contact',
-       description: 'Vous remplissez le formulaire ou nous contactez directement',
-       duration: 'Immédiat'
-     },
-     {
-       title: 'Analyse des Besoins',
-       description: 'Entretien détaillé pour comprendre vos objectifs',
-       duration: '24-48h'
-     },
-     {
-       title: 'Proposition & Devis',
-       description: 'Présentation de la solution et estimation des coûts',
-       duration: '3-5 jours'
-     },
-     {
-       title: 'Validation & Planning',
-       description: 'Signature du contrat et planification du projet',
-       duration: '1-2 jours'
-     },
-     {
-       title: 'Développement',
-       description: 'Réalisation du projet avec suivi régulier',
-       duration: 'Variable'
-     }
-   ];
+  constructor(
+    private fb: FormBuilder,
+    private messageService: MessageService
+  ) {
+    emailjs.init(environment.emailJS.publicKey);
+  }
 
-   constructor(
-     private fb: FormBuilder,
-     private messageService: MessageService
-   ) {
-     this.contactForm = this.fb.group({
-       firstName: ['', Validators.required],
-       lastName: ['', Validators.required],
-       email: ['', [Validators.required, Validators.email]],
-       phone: [''],
-       company: [''],
-       service: ['', Validators.required],
-       project: ['', Validators.required],
-       budget: ['']
-     });
+  ngOnInit(): void {
+    this.initializeForm();
+  }
 
-     // Initialiser EmailJS
-     emailjs.init(environment.emailJS.publicKey);
-   }
+  private initializeForm(): void {
+    this.contactForm = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: [''],
+      company: [''],
+      service: ['', Validators.required],
+      project: ['', [Validators.required, Validators.minLength(50)]],
+      budget: ['']
+    });
+  }
 
-   async onSubmit() {
-     if (this.contactForm.valid) {
-       this.isSubmitting = true;
+  async onSubmit(): Promise<void> {
+    if (this.contactForm.invalid) {
+      this.markFormGroupTouched(this.contactForm);
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Erreur de validation',
+        detail: 'Veuillez corriger les erreurs dans le formulaire.',
+        life: 4000
+      });
+      return;
+    }
 
-       try {
-         // Préparer les données pour EmailJS
-         const templateParams = {
-           from_name: `${this.contactForm.value.firstName} ${this.contactForm.value.lastName}`,
-           from_email: this.contactForm.value.email,
-           phone: this.contactForm.value.phone || 'Non renseigné',
-           company: this.contactForm.value.company || 'Non renseigné',
-           service: this.getServiceLabel(this.contactForm.value.service),
-           project_description: this.contactForm.value.project,
-           budget: this.getBudgetLabel(this.contactForm.value.budget),
-           message: `
- Nouvelle demande de devis reçue :
+    this.isSubmitting = true;
 
- 👤 Contact: ${this.contactForm.value.firstName} ${this.contactForm.value.lastName}
- 📧 Email: ${this.contactForm.value.email}
- 📞 Téléphone: ${this.contactForm.value.phone || 'Non renseigné'}
- 🏢 Entreprise: ${this.contactForm.value.company || 'Non renseigné'}
- 🛠️ Service: ${this.getServiceLabel(this.contactForm.value.service)}
- 💰 Budget: ${this.getBudgetLabel(this.contactForm.value.budget)}
+    try {
+      const templateParams = this.prepareEmailTemplateParams();
 
- 📝 Description du projet:
- ${this.contactForm.value.project}
+      const response = await emailjs.send(
+        environment.emailJS.serviceID,
+        environment.emailJS.templateID,
+        templateParams
+      );
 
- ---
- Envoyé depuis le site MemkoTech
- Date: ${new Date().toLocaleString('fr-FR')}
-         `,
-           to_email: 'contact@memkotech.com' // Votre email de réception
-         };
+      console.log('✅ Email envoyé avec succès:', response);
 
-         // Envoyer l'email
-         const response = await emailjs.send(
-           environment.emailJS.serviceID,
-           environment.emailJS.templateID,
-           templateParams
-         );
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Demande envoyée avec succès !',
+        detail: 'Nous vous recontacterons dans les plus brefs délais (sous 24h maximum).',
+        life: 6000
+      });
 
+      this.contactForm.reset();
+      this.scrollToTop();
 
-         console.log('Email envoyé avec succès:', response);
+    } catch (error) {
+      console.error('❌ Erreur lors de l\'envoi:', error);
 
-         this.messageService.add({
-           severity: 'success',
-           summary: 'Demande envoyée !',
-           detail: 'Nous vous recontacterons dans les plus brefs délais.',
-           life: 5000
-         });
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Erreur d\'envoi',
+        detail: 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.',
+        life: 6000
+      });
+    } finally {
+      this.isSubmitting = false;
+    }
+  }
 
-         this.contactForm.reset();
+  private prepareEmailTemplateParams(): any {
+    const formValue = this.contactForm.value;
 
-       } catch (error) {
-         console.error('Erreur lors de l\'envoi:', error);
+    return {
+      from_name: `${formValue.firstName} ${formValue.lastName}`,
+      from_email: formValue.email,
+      phone: formValue.phone || 'Non renseigné',
+      company: formValue.company || 'Non renseigné',
+      service: this.getServiceLabel(formValue.service),
+      project_description: formValue.project,
+      budget: this.getBudgetLabel(formValue.budget),
+      message: `
+🎯 Nouvelle demande de devis MemkoTech
 
-         this.messageService.add({
-           severity: 'error',
-           summary: 'Erreur d\'envoi',
-           detail: 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement.',
-           life: 5000
-         });
-       } finally {
-         this.isSubmitting = false;
-       }
-     } else {
-       this.messageService.add({
-         severity: 'error',
-         summary: 'Erreur',
-         detail: 'Veuillez corriger les erreurs dans le formulaire.',
-         life: 3000
-       });
-     }
-   }
+👤 INFORMATIONS CLIENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Nom complet    : ${formValue.firstName} ${formValue.lastName}
+Email          : ${formValue.email}
+Téléphone      : ${formValue.phone || 'Non renseigné'}
+Entreprise     : ${formValue.company || 'Non renseigné'}
 
-   private getServiceLabel(value: string): string {
-     const service = this.services.find(s => s.value === value);
-     return service ? service.label : value;
-   }
+🛠️ DÉTAILS DU PROJET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Service        : ${this.getServiceLabel(formValue.service)}
+Budget estimé  : ${this.getBudgetLabel(formValue.budget)}
 
-   private getBudgetLabel(value: string): string {
-     if (!value) return 'Non renseigné';
-     const budget = this.budgetRanges.find(b => b.value === value);
-     return budget ? budget.label : value;
-   }
+📝 DESCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${formValue.project}
 
-   openWhatsApp() {
-     const message = encodeURIComponent('Bonjour MemkoTech, je souhaite discuter d\'un projet.');
-     window.open(`https://wa.me/221784886752?text=${message}`, '_blank');
-   }
- }
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 Date de soumission : ${new Date().toLocaleString('fr-FR', {
+        dateStyle: 'full',
+        timeStyle: 'short'
+      })}
+🌐 Source : Site web MemkoTech
+⏰ Action requise : Réponse sous 24h
+      `,
+      to_email: 'contact@memkotech.com'
+    };
+  }
+
+  private getServiceLabel(value: string): string {
+    const service = this.services.find(s => s.value === value);
+    return service ? service.label : value;
+  }
+
+  private getBudgetLabel(value: string): string {
+    if (!value) return 'Non renseigné';
+    const budget = this.budgetRanges.find(b => b.value === value);
+    return budget ? budget.label : value;
+  }
+
+  private markFormGroupTouched(formGroup: FormGroup): void {
+    Object.keys(formGroup.controls).forEach(key => {
+      const control = formGroup.get(key);
+      control?.markAsTouched();
+
+      if (control instanceof FormGroup) {
+        this.markFormGroupTouched(control);
+      }
+    });
+  }
+
+  openWhatsApp(): void {
+    const phone = '221784886752';
+    const message = encodeURIComponent(
+      'Bonjour MemkoTech, je souhaite discuter d\'un projet. Je viens de votre site web.'
+    );
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, '_blank');
+  }
+
+  scrollToForm(): void {
+    const formElement = document.querySelector('form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  private scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}

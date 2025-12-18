@@ -1,232 +1,260 @@
 <!-- Hero Section -->
-<section class="bg-gradient-to-br from-primary-600 via-primary-700 to-dark-900 text-white py-24 md:py-32 text-center">
-  <div class="container-custom">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Nos Services</h1>
-    <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-      Des solutions technologiques complètes pour propulser votre entreprise vers le futur
-    </p>
+<section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
+        Nos Services
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+        Des solutions technologiques complètes pour propulser votre entreprise vers le futur
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg class="w-full h-auto" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 48L60 42C120 36 240 24 360 21C480 18 600 24 720 32C840 40 960 50 1080 48C1200 46 1320 32 1380 25L1440 18V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0V48Z" fill="#ffffff"/>
+    </svg>
   </div>
 </section>
 
-<!-- Services Overview -->
-<section class="py-16 md:py-20 bg-white">
-  <div class="container-custom">
+<!-- Services Section -->
+<section class="bg-white py-12 sm:py-16 lg:py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- Boutons de navigation des services -->
+    <!-- Service Tabs -->
     <div class="flex flex-wrap gap-3 justify-center mb-12">
       <button
         *ngFor="let tab of serviceTabs"
         (click)="setActiveTab(tab.id)"
-        [class.active]="activeTab === tab.id"
-        class="px-6 py-3 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300
-               bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg
-               hover:-translate-y-0.5 hover:shadow-xl
-               active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-        [class.!from-blue-500]="activeTab === tab.id"
-        [class.!to-cyan-500]="activeTab === tab.id"
-        [class.!shadow-glow-blue]="activeTab === tab.id">
+        class="px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm uppercase tracking-wide transition-all duration-300
+               shadow-lg hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        [ngClass]="{
+          'bg-gradient-to-r from-blue-500 to-cyan-500 text-white': activeTab === tab.id,
+          'bg-gradient-to-r from-blue-600 to-blue-700 text-white': activeTab !== tab.id
+        }">
         <i [class]="tab.icon" class="mr-2"></i>
-        {{ tab.label }}
+        <span class="hidden sm:inline">{{ tab.label }}</span>
+        <span class="sm:hidden">{{ tab.label.slice(0, 4) }}</span>
       </button>
     </div>
 
-    <!-- Contenu des onglets -->
+    <!-- Tab Content -->
     <div class="animate-fade-in">
 
-      <!-- Tab Développement -->
+      <!-- Développement Tab -->
       <div *ngIf="activeTab === 'development'" class="space-y-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Contenu principal -->
           <div class="lg:col-span-2 space-y-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Développement Web & Mobile</h2>
-            <p class="text-lg text-dark-600 leading-relaxed">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Développement Web & Mobile</h2>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
               Nous créons des applications web et mobiles performantes, sécurisées et évolutives
               en utilisant les technologies les plus récentes.
             </p>
 
             <!-- Technologies Web -->
             <div class="space-y-4">
-              <h3 class="text-2xl font-semibold text-dark-800">Technologies Web</h3>
-              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800">Technologies Web</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 <div *ngFor="let tech of webTechnologies"
-                     class="bg-dark-50 p-4 rounded-xl text-center transition-all duration-300
-                            hover:bg-primary-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
-                            border-2 border-transparent hover:border-primary-500
-                            min-h-[100px] flex flex-col items-center justify-center">
-                  <i [class]="tech.icon" class="text-3xl mb-2"></i>
-                  <span class="font-medium text-sm">{{ tech.name }}</span>
+                     class="bg-gray-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-blue-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-blue-500
+                            min-h-[90px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-2xl sm:text-3xl mb-2"></i>
+                  <span class="font-medium text-xs sm:text-sm">{{ tech.name }}</span>
                 </div>
               </div>
             </div>
 
             <!-- Technologies Mobile -->
             <div class="space-y-4">
-              <h3 class="text-2xl font-semibold text-dark-800">Technologies Mobile</h3>
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800">Technologies Mobile</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div *ngFor="let tech of mobileTechnologies"
-                     class="bg-dark-50 p-4 rounded-xl text-center transition-all duration-300
-                            hover:bg-primary-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
-                            border-2 border-transparent hover:border-primary-500
-                            min-h-[100px] flex flex-col items-center justify-center">
-                  <i [class]="tech.icon" class="text-3xl mb-2"></i>
-                  <span class="font-medium text-sm">{{ tech.name }}</span>
+                     class="bg-gray-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-blue-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-blue-500
+                            min-h-[90px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-2xl sm:text-3xl mb-2"></i>
+                  <span class="font-medium text-xs sm:text-sm">{{ tech.name }}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Sidebar Features -->
-          <div class="bg-dark-50 p-8 rounded-2xl h-fit space-y-6">
-            <h3 class="text-xl font-bold text-dark-900">Ce que nous offrons</h3>
+          <!-- Sidebar -->
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl h-fit border border-blue-200">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-6">Ce que nous offrons</h3>
             <ul class="space-y-4">
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Applications web responsives</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Applications web responsives</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>E-commerce & marketplaces</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">E-commerce & marketplaces</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Applications métier (ERP, CRM)</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Applications métier (ERP, CRM)</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Applications mobiles cross-platform</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Applications mobiles cross-platform</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>PWA (Progressive Web Apps)</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">PWA (Progressive Web Apps)</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>API & services web</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">API & services web</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Tab IA -->
+      <!-- Intelligence Artificielle Tab -->
       <div *ngIf="activeTab === 'ia'" class="space-y-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <!-- Contenu principal -->
           <div class="lg:col-span-2 space-y-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Intelligence Artificielle</h2>
-            <p class="text-lg text-dark-600 leading-relaxed">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Intelligence Artificielle</h2>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
               Nous concevons des solutions d'intelligence artificielle qui transforment vos données
               en décisions intelligentes, automatisent vos processus et optimisent vos performances.
             </p>
 
-            <!-- Technologies IA -->
             <div class="space-y-4">
-              <h3 class="text-2xl font-semibold text-dark-800">Technologies & Frameworks</h3>
-              <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <i class="pi pi-cog text-3xl mb-2 block"></i>
-                  <span class="font-medium text-sm">Python (TensorFlow, PyTorch)</span>
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800">Technologies & Frameworks</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 text-center">
+                  <i class="pi pi-cog text-2xl sm:text-3xl mb-2 block"></i>
+                  <span class="font-medium text-xs sm:text-sm">Python (TensorFlow, PyTorch)</span>
                 </div>
-                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <i class="pi pi-database text-3xl mb-2 block"></i>
-                  <span class="font-medium text-sm">Scikit-learn</span>
+                <div class="bg-gray-50 p-4 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 text-center">
+                  <i class="pi pi-database text-2xl sm:text-3xl mb-2 block"></i>
+                  <span class="font-medium text-xs sm:text-sm">Scikit-learn</span>
                 </div>
-                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <i class="pi pi-chart-line text-3xl mb-2 block"></i>
-                  <span class="font-medium text-sm">Hugging Face</span>
+                <div class="bg-gray-50 p-4 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 text-center">
+                  <i class="pi pi-chart-line text-2xl sm:text-3xl mb-2 block"></i>
+                  <span class="font-medium text-xs sm:text-sm">Hugging Face</span>
                 </div>
-                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <i class="pi pi-eye text-3xl mb-2 block"></i>
-                  <span class="font-medium text-sm">OpenCV</span>
+                <div class="bg-gray-50 p-4 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 text-center">
+                  <i class="pi pi-eye text-2xl sm:text-3xl mb-2 block"></i>
+                  <span class="font-medium text-xs sm:text-sm">OpenCV</span>
                 </div>
-                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <i class="pi pi-comment text-3xl mb-2 block"></i>
-                  <span class="font-medium text-sm">NLP & Chatbots</span>
+                <div class="bg-gray-50 p-4 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 text-center">
+                  <i class="pi pi-comment text-2xl sm:text-3xl mb-2 block"></i>
+                  <span class="font-medium text-xs sm:text-sm">NLP & Chatbots</span>
                 </div>
-                <div class="bg-dark-50 p-4 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 hover:-translate-y-1">
-                  <i class="pi pi-cloud text-3xl mb-2 block"></i>
-                  <span class="font-medium text-sm">IA Cloud</span>
+                <div class="bg-gray-50 p-4 rounded-xl hover:bg-blue-600 hover:text-white transition-all duration-300 hover:-translate-y-1 text-center">
+                  <i class="pi pi-cloud text-2xl sm:text-3xl mb-2 block"></i>
+                  <span class="font-medium text-xs sm:text-sm">IA Cloud</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Sidebar Features -->
-          <div class="bg-dark-50 p-8 rounded-2xl h-fit space-y-6">
-            <h3 class="text-xl font-bold text-dark-900">Ce que nous offrons</h3>
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl h-fit border border-blue-200">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-6">Ce que nous offrons</h3>
             <ul class="space-y-4">
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Intégration d'IA dans vos systèmes</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Intégration d'IA dans vos systèmes</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Développement de chatbots intelligents</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Développement de chatbots intelligents</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Analyse automatisée des données</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Analyse automatisée des données</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Systèmes de recommandation</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Systèmes de recommandation</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>IA embarquée pour mobile</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">IA embarquée pour mobile</span>
               </li>
-              <li class="flex items-start text-dark-700">
-                <i class="pi pi-check text-green-600 mt-1 mr-3 flex-shrink-0"></i>
-                <span>Accompagnement IA éthique</span>
+              <li class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">Accompagnement IA éthique</span>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Ajoutez les autres onglets (infrastructure, security, maintenance) de la même manière -->
+      <!-- Infrastructure Tab -->
+      <div *ngIf="activeTab === 'infrastructure'" class="text-center py-12">
+        <i class="pi pi-cloud text-6xl text-blue-600 mb-4"></i>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Infrastructure Cloud</h2>
+        <p class="text-gray-600">Contenu en construction...</p>
+      </div>
 
+      <!-- Security Tab -->
+      <div *ngIf="activeTab === 'security'" class="text-center py-12">
+        <i class="pi pi-shield text-6xl text-blue-600 mb-4"></i>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Cybersécurité</h2>
+        <p class="text-gray-600">Contenu en construction...</p>
+      </div>
+
+      <!-- Maintenance Tab -->
+      <div *ngIf="activeTab === 'maintenance'" class="text-center py-12">
+        <i class="pi pi-cog text-6xl text-blue-600 mb-4"></i>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Maintenance & Support</h2>
+        <p class="text-gray-600">Contenu en construction...</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Process Section -->
-<section class="py-16 md:py-20 bg-dark-50">
-  <div class="container-custom">
-    <div class="text-center mb-12 space-y-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Notre Processus</h2>
-      <p class="text-lg text-dark-600 max-w-3xl mx-auto">
+<section class="bg-gradient-to-br from-blue-50 to-white py-12 sm:py-16 lg:py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Notre Processus</h2>
+      <p class="text-base sm:text-lg text-gray-600">
         Une méthode éprouvée pour garantir le succès de vos projets
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
       <div *ngFor="let step of processSteps; let i = index"
-           class="bg-white p-8 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-        <div class="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-full
-                    flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-glow-blue-sm">
+           class="bg-white p-6 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-blue-100">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-full
+                    flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 shadow-lg">
           {{ i + 1 }}
         </div>
-        <h3 class="text-xl font-bold text-dark-900 mb-4">{{ step.title }}</h3>
-        <p class="text-dark-600 text-sm leading-relaxed">{{ step.description }}</p>
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-3">{{ step.title }}</h3>
+        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">{{ step.description }}</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="py-16 md:py-20 bg-white">
-  <div class="container-custom max-w-4xl">
-    <div class="text-center mb-12 space-y-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-dark-900">Questions Fréquentes</h2>
-      <p class="text-lg text-dark-600">
+<section class="bg-white py-12 sm:py-16 lg:py-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Questions Fréquentes</h2>
+      <p class="text-base sm:text-lg text-gray-600">
         Réponses aux questions les plus courantes de nos clients
       </p>
     </div>
 
-    <p-accordion>
+    <p-accordion [multiple]="true">
       <p-accordionTab header="Quels sont vos délais de livraison ?">
-        <p class="text-dark-700 leading-relaxed">
+        <p class="text-gray-700 leading-relaxed">
           Les délais varient selon la complexité du projet. Pour un site web simple : 2-4 semaines.
           Pour une application complète : 8-16 semaines. Nous établissons toujours un planning détaillé
           lors de l'analyse initiale.
@@ -234,21 +262,21 @@
       </p-accordionTab>
 
       <p-accordionTab header="Proposez-vous de la maintenance post-livraison ?">
-        <p class="text-dark-700 leading-relaxed">
+        <p class="text-gray-700 leading-relaxed">
           Oui, nous proposons différents niveaux de maintenance : support standard (horaires bureau)
           et support premium (24/7). Cela inclut les mises à jour, le monitoring et la résolution d'incidents.
         </p>
       </p-accordionTab>
 
       <p-accordionTab header="Travaillez-vous avec des entreprises de toutes tailles ?">
-        <p class="text-dark-700 leading-relaxed">
+        <p class="text-gray-700 leading-relaxed">
           Absolument ! Nous accompagnons aussi bien les startups que les grandes entreprises.
           Nos solutions s'adaptent à votre budget et vos besoins spécifiques.
         </p>
       </p-accordionTab>
 
       <p-accordionTab header="Comment garantissez-vous la sécurité des données ?">
-        <p class="text-dark-700 leading-relaxed">
+        <p class="text-gray-700 leading-relaxed">
           Nous appliquons les meilleures pratiques de sécurité : chiffrement des données,
           authentification forte, audits réguliers et conformité RGPD.
         </p>
@@ -258,15 +286,20 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 md:py-28 bg-gradient-to-br from-dark-800 to-dark-950 text-white text-center">
-  <div class="container-custom max-w-4xl space-y-8">
-    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">
+<section class="relative bg-gradient-to-br from-gray-800 to-gray-900 overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
       Discutons de Votre Projet
     </h2>
-    <p class="text-lg md:text-xl text-dark-200">
+    <p class="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
       Nos experts sont à votre disposition pour analyser vos besoins et vous proposer la solution idéale
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <p-button
         label="Demander un Devis"
         icon="pi pi-send"

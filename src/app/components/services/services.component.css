@@ -1,112 +1,9 @@
-/* =================================== */
-/* HERO SECTION */
-/* =================================== */
-.hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: clamp(6rem, 12vw, 8rem) 2rem clamp(3rem, 6vw, 4rem);
-  text-align: center;
-}
+/* ============================================
+   SERVICES COMPONENT - TAILWIND + PRIMENG
+   Styles minimalistes - Tailwind first
+   ============================================ */
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 clamp(1rem, 4vw, 2rem);
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* =================================== */
-/* SERVICES OVERVIEW */
-/* =================================== */
-.services-overview {
-  padding: clamp(4rem, 10vw, 6rem) 2rem;
-  background: white;
-}
-
-/* =================================== */
-/* BOUTONS DE NAVIGATION MODERNES */
-/* =================================== */
-
-.service-buttons {
-  display: flex;
-  gap: clamp(8px, 2vw, 15px);
-  margin: clamp(1rem, 4vw, 2rem) 0 clamp(2rem, 6vw, 3rem) 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.service-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
-  border-radius: 8px;
-  font-size: clamp(12px, 2.5vw, 14px);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  min-width: clamp(100px, 20vw, 120px);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(4px, 1vw, 8px);
-  white-space: nowrap;
-}
-
-.service-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.service-btn.active {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
-}
-
-.service-btn:focus {
-  outline: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 0 3px rgba(79, 172, 254, 0.3);
-}
-
-.service-btn i {
-  transition: transform 0.3s ease;
-  font-size: clamp(12px, 2.5vw, 16px);
-}
-
-.service-btn:hover i,
-.service-btn.active i {
-  transform: scale(1.1);
-}
-
-/* =================================== */
-/* CONTENU DES SERVICES */
-/* =================================== */
-
-.service-content-container {
-  margin-top: 2rem;
-}
-
-.service-tab-content {
-  animation: fadeIn 0.4s ease-in-out;
-}
-
+/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -118,580 +15,134 @@
   }
 }
 
-.service-detail {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2rem, 6vw, 3rem);
-  margin-top: 2rem;
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-.service-content h2 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+/* PrimeNG Accordion customization */
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+  background: #f8f9fa !important;
+  border: 1px solid #e5e7eb !important;
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.3s ease !important;
 }
 
-.service-content p {
-  color: #666;
-  margin-bottom: 2rem;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  line-height: 1.6;
+::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: white !important;
+  border-color: #2563eb !important;
 }
 
-.technologies {
-  margin-bottom: 2rem;
+::ng-deep .p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:hover {
+  background: #eff6ff !important;
+  border-color: #93c5fd !important;
+  color: #1e40af !important;
 }
 
-.technologies h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
+::ng-deep .p-accordion .p-accordion-content {
+  background: white !important;
+  color: #4b5563 !important;
+  padding: 1.25rem !important;
+  line-height: 1.75 !important;
+  font-size: 1rem !important;
+  border: 1px solid #e5e7eb !important;
+  border-top: none !important;
+  border-radius: 0 0 0.5rem 0.5rem !important;
 }
 
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(100px, 20vw, 120px), 1fr));
-  gap: clamp(0.5rem, 2vw, 1rem);
+/* PrimeNG Button customization */
+::ng-deep .p-button {
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease !important;
+  padding: 0.875rem 1.75rem !important;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  border: none !important;
 }
 
-.tech-item {
-  background: #f8f9fa;
-  padding: clamp(0.75rem, 2vw, 1rem);
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  min-height: clamp(70px, 15vw, 90px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+::ng-deep .p-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3) !important;
 }
 
-.tech-item:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-3px);
+::ng-deep .p-button.p-button-lg {
+  padding: 1rem 2rem !important;
+  font-size: 1.125rem !important;
 }
 
-.tech-item i {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  margin-bottom: 0.5rem;
-  display: block;
+::ng-deep .p-button.p-button-outlined {
+  background: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
 }
 
-.tech-item span {
-  font-weight: 500;
-  font-size: clamp(0.7rem, 2vw, 0.9rem);
-  text-align: center;
-  line-height: 1.2;
+::ng-deep .p-button.p-button-outlined:hover:not(:disabled) {
+  background: white !important;
+  color: #1d4ed8 !important;
+  border-color: white !important;
 }
 
-.service-features {
-  background: #f8f9fa;
-  padding: clamp(1.5rem, 4vw, 2rem);
-  border-radius: 12px;
-  height: fit-content;
-  margin-top: 1rem;
+/* Responsive buttons */
+@media (max-width: 640px) {
+  ::ng-deep .p-button {
+    width: 100% !important;
+  }
 }
 
-.service-features h3 {
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  font-size: clamp(1.1rem, 3vw, 1.25rem);
-}
-
-.service-features ul {
-  list-style: none;
-  padding: 0;
-}
-
-.service-features ul li {
-  color: #666;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-}
-
-.service-features ul li i {
-  color: #27ae60;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.support-levels {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1rem, 4vw, 2rem);
-  margin-top: 2rem;
-}
-
-.support-level {
-  background: #f8f9fa;
-  padding: clamp(1rem, 3vw, 1.5rem);
-  border-radius: 12px;
-  border-left: 4px solid #667eea;
-}
-
-.support-level h4 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-}
-
-.support-level ul {
-  list-style: none;
-  padding: 0;
-}
-
-.support-level ul li {
-  color: #666;
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
-  position: relative;
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
-}
-
-.support-level ul li::before {
-  content: '•';
-  color: #667eea;
-  position: absolute;
-  left: 0;
-}
-
-/* =================================== */
-/* PROCESS SECTION */
-/* =================================== */
-.process {
-  background: #f8f9fa;
-  padding: clamp(4rem, 10vw, 6rem) 2rem;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: clamp(3rem, 8vw, 4rem);
-}
-
-.section-header h2 {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  color: #666;
-  max-width: 600px;
+/* Container responsive */
+.container {
+  max-width: 100%;
   margin: 0 auto;
 }
 
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(1.5rem, 4vw, 2rem);
-}
-
-.step {
-  background: white;
-  padding: clamp(1.5rem, 4vw, 2rem);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  position: relative;
-  text-align: center;
-}
-
-.step:hover {
-  transform: translateY(-5px);
-}
-
-.step-number {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  width: clamp(40px, 8vw, 50px);
-  height: clamp(40px, 8vw, 50px);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  font-weight: 700;
-  margin: 0 auto 1.5rem;
-}
-
-.step-content h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-}
-
-.step-content p {
-  color: #666;
-  line-height: 1.6;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  margin: 0;
-}
-
-/* =================================== */
-/* FAQ SECTION */
-/* =================================== */
-.faq {
-  padding: clamp(4rem, 10vw, 6rem) 2rem;
-  background: white;
-}
-
-.faq ::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
-  background: #f8f9fa;
-  border: 1px solid #dee2e6;
-  color: #2c3e50;
-  font-weight: 600;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  padding: clamp(0.75rem, 2vw, 1rem);
-}
-
-.faq ::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
-  background: #667eea;
-  color: white;
-}
-
-.faq ::ng-deep .p-accordion .p-accordion-content {
-  background: white;
-  color: #666;
-  padding: clamp(1rem, 3vw, 1.5rem);
-  line-height: 1.6;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-}
-
-/* =================================== */
-/* CTA SECTION */
-/* =================================== */
-.cta {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
-  padding: clamp(4rem, 10vw, 6rem) 2rem;
-  text-align: center;
-}
-
-.cta-content h2 {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.cta-content p {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.cta-buttons ::ng-deep .p-button {
-  font-weight: 600 !important;
-  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem) !important;
-  border-radius: 12px !important;
-  font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
-  white-space: nowrap;
-}
-
-/* =================================== */
-/* RESPONSIVE BREAKPOINTS */
-/* =================================== */
-
-/* Extra Small devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
-  .service-buttons {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-  }
-
-  .service-btn {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-    padding: 12px 16px;
-    font-size: 13px;
-  }
-
-  .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .tech-item {
-    min-height: 60px;
-    padding: 0.5rem;
-  }
-
-  .service-detail {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .support-levels {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .cta-buttons ::ng-deep .p-button {
-    width: 100% !important;
-    max-width: 300px;
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .service-buttons {
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .service-btn {
-    flex: 0 1 auto;
-    min-width: 120px;
-    padding: 10px 18px;
-    font-size: 13px;
-  }
-
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .service-detail {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .support-levels {
-    grid-template-columns: 1fr;
-  }
-
-  .process-steps {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .service-buttons {
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .service-btn {
-    flex: 0 1 auto;
-    min-width: 130px;
-    padding: 11px 20px;
-    font-size: 14px;
-  }
-
-  .tech-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .service-detail {
-    grid-template-columns: 2fr 1fr;
-    gap: 2.5rem;
-  }
-
-  .support-levels {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .process-steps {
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  .service-buttons {
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .service-btn {
-    flex: 0 1 auto;
-    min-width: 140px;
-    padding: 12px 24px;
-    font-size: 14px;
-  }
-
-  .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-
-  .service-detail {
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-  }
-
-  .support-levels {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .process-steps {
-    grid-template-columns: repeat(5, 1fr);
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
   }
 }
 
-/* =================================== */
-/* LANDSCAPE ORIENTATION */
-/* =================================== */
-@media (max-width: 767.98px) and (orientation: landscape) {
-  .hero {
-    padding: 4rem 2rem 2rem;
-  }
-
-  .service-buttons {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .service-btn {
-    flex: 1;
-    min-width: 100px;
-    max-width: 150px;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .tech-grid {
-    grid-template-columns: repeat(4, 1fr);
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
   }
 }
 
-/* =================================== */
-/* ACCESSIBILITY IMPROVEMENTS */
-/* =================================== */
-
-/* Focus indicators */
-.service-btn:focus {
-  outline: 3px solid rgba(79, 172, 254, 0.5);
-  outline-offset: 2px;
-}
-
-.cta-buttons ::ng-deep .p-button:focus {
-  outline: 3px solid rgba(255, 255, 255, 0.5) !important;
-  outline-offset: 2px !important;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .service-btn {
-    border: 2px solid currentColor;
-  }
-
-  .tech-item,
-  .service-features,
-  .support-level,
-  .step {
-    border: 2px solid #2c3e50;
-  }
-}
-
-/* Reduced motion support */
+/* Smooth animations */
 @media (prefers-reduced-motion: reduce) {
-  .service-tab-content {
-    animation: none !important;
-  }
-
-  .service-btn:hover,
-  .tech-item:hover,
-  .step:hover {
-    transform: none !important;
-  }
-
-  .service-btn i {
-    transform: none !important;
+  .animate-fade-in,
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 /* Print styles */
 @media print {
-  .service-buttons {
-    display: none;
-  }
-
-  .service-tab-content {
-    page-break-inside: avoid;
-  }
-
-  .step {
-    page-break-inside: avoid;
-  }
-}
-
-/* =================================== */
-/* TOUCH DEVICES OPTIMIZATION */
-/* =================================== */
-@media (hover: none) and (pointer: coarse) {
-  .service-btn {
-    padding: 14px 20px; /* Larger touch targets */
-    margin: 4px 0;
-  }
-
-  .tech-item {
-    min-height: 80px; /* Larger touch areas */
-  }
-
-  /* Remove hover effects on touch devices */
-  .service-btn:hover,
-  .tech-item:hover,
-  .step:hover {
-    transform: none;
-  }
-}
-
-/* Very small screens optimization */
-@media (max-width: 320px) {
-  .container {
-    padding: 0 0.5rem;
-  }
-
-  .service-btn {
-    font-size: 11px;
-    padding: 10px 12px;
-    letter-spacing: 0.3px;
-  }
-
-  .tech-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  .tech-item {
-    min-height: 50px;
-    padding: 0.5rem 0.25rem;
-  }
-
-  .tech-item span {
-    font-size: 0.7rem;
+  ::ng-deep .p-button,
+  button {
+    display: none !important;
   }
 }
