@@ -54,6 +54,7 @@
   border: 1px solid #e5e7eb !important;
   transition: all 0.3s ease !important;
   height: 100%;
+  color: #1f2937 !important; /* Texte gris foncé visible */
 }
 
 ::ng-deep .p-card:hover {
@@ -66,6 +67,20 @@
 
 ::ng-deep .p-card .p-card-content {
   padding: 1.5rem !important;
+  color: #1f2937 !important; /* Texte gris foncé visible */
+}
+
+::ng-deep .p-card h3,
+::ng-deep .p-card h4 {
+  color: #111827 !important; /* Titres en noir */
+}
+
+::ng-deep .p-card p {
+  color: #4b5563 !important; /* Paragraphes en gris moyen */
+}
+
+::ng-deep .p-card li {
+  color: #374151 !important; /* Items de liste en gris foncé */
 }
 
 /* PrimeNG Buttons */
