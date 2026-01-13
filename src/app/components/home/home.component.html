@@ -1,73 +1,23 @@
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-primary-600 via-primary-700 to-dark-900 text-white py-24 md:py-32 lg:py-40 min-h-[80vh] flex items-center overflow-hidden">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-  </div>
+<!-- ================= HERO SECTION ================= -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden text-white">
+  <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+    <source src="/images/accueil.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 bg-black/65"></div>
 
-  <div class="container-custom relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Texte Hero -->
-      <div class="text-center lg:text-left space-y-6 animate-fade-in">
+  <div class="relative z-10 container-custom py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div class="space-y-6 text-center lg:text-left">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          Votre Partenaire <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-primary-200">
-            Technologique
-          </span> de Confiance
+          Solutions Numériques <br>
+          <span class="text-blue-300">Innovantes & Sécurisées</span>
         </h1>
-
-        <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto lg:mx-0">
-          MemkoTech transforme vos idées en solutions technologiques performantes.
-          De la conception à la maintenance, nous accompagnons votre croissance digitale.
+        <p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
+          MemkoTech accompagne les entreprises, écoles et organisations dans leur transformation digitale.
         </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-          <p-button
-            label="Nos Services"
-            icon="pi pi-arrow-right"
-            styleClass="p-button-lg"
-            routerLink="/services"
-            class="shadow-xl hover:shadow-2xl transition-shadow">
-          </p-button>
-          <p-button
-            label="Contactez-nous"
-            icon="pi pi-phone"
-            styleClass="p-button-outlined p-button-lg"
-            routerLink="/contact">
-          </p-button>
-        </div>
-      </div>
-
-      <!-- Visual Hero avec cartes flottantes -->
-      <div class="relative h-96 lg:h-[500px] mt-8 lg:mt-0">
-        <!-- Carte 1 -->
-        <div class="absolute top-[5%] left-[10%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm">
-          <i class="pi pi-code text-3xl md:text-4xl text-primary-300"></i>
-          <span class="text-sm md:text-base font-semibold">Développement</span>
-        </div>
-
-        <!-- Carte 2 -->
-        <div class="absolute top-[10%] right-[10%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm" style="animation-delay: 1.5s;">
-          <i class="pi pi-cloud text-3xl md:text-4xl text-primary-300"></i>
-          <span class="text-sm md:text-base font-semibold">Cloud</span>
-        </div>
-
-        <!-- Carte 3 -->
-        <div class="absolute bottom-[35%] left-[15%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm" style="animation-delay: 3s;">
-          <i class="pi pi-shield text-3xl md:text-4xl text-primary-300"></i>
-          <span class="text-sm md:text-base font-semibold">Sécurité</span>
-        </div>
-
-        <!-- Carte 4 -->
-        <div class="absolute bottom-[35%] right-[15%] w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-float shadow-glow-blue-sm" style="animation-delay: 4.5s;">
-          <i class="pi pi-mobile text-3xl md:text-4xl text-primary-300"></i>
-          <span class="text-sm md:text-base font-semibold">Mobile</span>
-        </div>
-
-        <!-- Carte centrale IA -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-36 md:h-36 bg-primary-500/20 backdrop-blur-lg border-2 border-primary-300/40 rounded-2xl p-4 flex flex-col items-center justify-center gap-2 animate-pulse-slow shadow-glow-blue">
-          <i class="pi pi-reddit text-4xl md:text-5xl text-primary-200"></i>
-          <span class="text-base md:text-lg font-bold">IA</span>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+          <p-button label="Nos Services" icon="pi pi-briefcase" routerLink="/services" styleClass="p-button-lg"></p-button>
+          <p-button label="Contact" icon="pi pi-envelope" routerLink="/contact" styleClass="p-button-outlined p-button-lg"></p-button>
         </div>
       </div>
     </div>
@@ -98,195 +48,66 @@
   </div>
 </section>
 
-<!-- Services Preview -->
-<section class="py-20 md:py-28 bg-white">
+<section class="py-24 bg-white">
   <div class="container-custom">
-    <div class="text-center mb-16 space-y-4">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900">
-        Nos Domaines d'Expertise
-      </h2>
-      <p class="text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
-        Des solutions complètes pour tous vos besoins technologiques
-      </p>
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold">Nos Domaines d'Expertise</h2>
+      <p class="text-gray-600 mt-4">Des solutions complètes pour tous vos besoins technologiques</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Service Card 1 -->
-      <p-card class="bg-white hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <p-card>
         <ng-template pTemplate="header">
-          <div class="flex justify-center pt-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
-              <i class="pi pi-desktop text-3xl"></i>
-            </div>
-          </div>
+          <img src="/images/code.jpg" class="w-full h-48 object-cover rounded-t-xl">
         </ng-template>
-        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Développement Web</h3>
-        <p class="text-dark-600 text-center mb-6">
-          Applications web modernes, responsives et performantes avec les dernières technologies.
-        </p>
-        <ul class="space-y-3">
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            React, Angular, Vue.js
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Node.js, Java, Python, PHP
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Bases de données
-          </li>
-        </ul>
+        <h3 class="text-xl font-bold text-center mt-4">Développement Web & Mobile</h3>
+        <p class="text-center text-gray-600 mt-2">Applications modernes et performantes.</p>
       </p-card>
 
-      <!-- Service Card 2 -->
-      <p-card class="bg-white hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+      <p-card>
         <ng-template pTemplate="header">
-          <div class="flex justify-center pt-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
-              <i class="pi pi-mobile text-3xl"></i>
-            </div>
-          </div>
+          <img src="/images/ia.jpg" class="w-full h-48 object-cover rounded-t-xl">
         </ng-template>
-        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Applications Mobile</h3>
-        <p class="text-dark-600 text-center mb-6">
-          Applications natives et cross-platform pour iOS et Android.
-        </p>
-        <ul class="space-y-3">
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            React Native, Flutter
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            iOS & Android natif
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            PWA
-          </li>
-        </ul>
+        <h3 class="text-xl font-bold text-center mt-4">Intelligence Artificielle</h3>
+        <p class="text-center text-gray-600 mt-2">Automatisation et analyse intelligente.</p>
       </p-card>
 
-      <!-- Service Card 3 -->
-      <p-card class="bg-white hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+      <p-card>
         <ng-template pTemplate="header">
-          <div class="flex justify-center pt-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
-              <i class="pi pi-cloud text-3xl"></i>
-            </div>
-          </div>
+          <img src="/images/cloud.jpg" class="w-full h-48 object-cover rounded-t-xl">
         </ng-template>
-        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Infrastructure Cloud</h3>
-        <p class="text-dark-600 text-center mb-6">
-          Migration, déploiement et gestion d'infrastructures cloud scalables.
-        </p>
-        <ul class="space-y-3">
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            AWS, Azure, GCP
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            DevOps & CI/CD
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Conteneurisation
-          </li>
-        </ul>
+        <h3 class="text-xl font-bold text-center mt-4">Cloud & DevOps</h3>
+        <p class="text-center text-gray-600 mt-2">Scalabilité et haute disponibilité.</p>
       </p-card>
 
-      <!-- Service Card 4 -->
-      <p-card class="bg-white hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+      <p-card>
         <ng-template pTemplate="header">
-          <div class="flex justify-center pt-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
-              <i class="pi pi-shield text-3xl"></i>
-            </div>
-          </div>
+          <img src="/images/cybersecurite.jpg" class="w-full h-48 object-cover rounded-t-xl">
         </ng-template>
-        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Cybersécurité</h3>
-        <p class="text-dark-600 text-center mb-6">
-          Protection de vos données et systèmes contre les menaces cybernétiques.
-        </p>
-        <ul class="space-y-3">
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Audit de sécurité
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Pentesting
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Formation équipes
-          </li>
-        </ul>
+        <h3 class="text-xl font-bold text-center mt-4">Cybersécurité</h3>
+        <p class="text-center text-gray-600 mt-2">Protection et audits des systèmes.</p>
       </p-card>
 
-      <!-- Service Card 5 -->
-      <p-card class="bg-white hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+      <p-card>
         <ng-template pTemplate="header">
-          <div class="flex justify-center pt-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
-              <i class="pi pi-cog text-3xl"></i>
-            </div>
-          </div>
+          <img src="/images/maintenance.jpg" class="w-full h-48 object-cover rounded-t-xl">
         </ng-template>
-        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Maintenance & Support</h3>
-        <p class="text-dark-600 text-center mb-6">
-          Maintenance préventive et support technique 24/7 pour vos systèmes.
-        </p>
-        <ul class="space-y-3">
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Monitoring 24/7
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Mises à jour
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Support technique
-          </li>
-        </ul>
+        <h3 class="text-xl font-bold text-center mt-4">Maintenance IT</h3>
+        <p class="text-center text-gray-600 mt-2">Support et optimisation continue.</p>
       </p-card>
 
-      <!-- Service Card 6 -->
-      <p-card class="bg-white hover:-translate-y-2 hover:shadow-xl-blue transition-all duration-300">
+      <p-card>
         <ng-template pTemplate="header">
-          <div class="flex justify-center pt-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white rounded-full flex items-center justify-center shadow-glow-blue">
-              <i class="pi pi-chart-line text-3xl"></i>
-            </div>
-          </div>
+          <img src="/images/consulting.jpg" class="w-full h-48 object-cover rounded-t-xl">
         </ng-template>
-        <h3 class="text-xl font-bold text-dark-900 text-center mb-4">Consulting IT</h3>
-        <p class="text-dark-600 text-center mb-6">
-          Conseils stratégiques pour optimiser votre infrastructure technologique.
-        </p>
-        <ul class="space-y-3">
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Audit technique
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Stratégie digitale
-          </li>
-          <li class="flex items-center text-dark-700 text-sm">
-            <i class="pi pi-check text-green-600 mr-2"></i>
-            Transformation
-          </li>
-        </ul>
+        <h3 class="text-xl font-bold text-center mt-4">Consulting IT</h3>
+        <p class="text-center text-gray-600 mt-2">Conseil stratégique digital.</p>
       </p-card>
     </div>
   </div>
 </section>
+
+
 
 <!-- Why Choose Us -->
 <section class="py-20 md:py-28 bg-gradient-to-br from-dark-50 to-blue-50">
@@ -362,10 +183,10 @@
           routerLink="/contact">
         </p-button>
         <p-button
-          label="Voir nos Réalisations"
+          label="Voir nos réalisations"
           icon="pi pi-eye"
-          styleClass="p-button-outlined p-button-lg">
-        </p-button>
+          styleClass="p-button-lg p-button-outlined"
+        ></p-button>
       </div>
     </div>
   </div>
