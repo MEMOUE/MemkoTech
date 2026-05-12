@@ -2,11 +2,34 @@
    APP COMPONENT - TAILWIND + PRIMENG
    ============================================ */
 
+/* Force le header en gris foncé solide — aucune transparence */
+header {
+  background-color: #111827 !important;
+}
+
+/* Lien nav actif */
+.active-nav-link {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: #60a5fa !important;
+}
+
+/* Masquer la bordure mobile en desktop */
+@media (min-width: 768px) {
+  header ul li {
+    border-bottom: none !important;
+  }
+
+  /* Menu mobile: reset bg en desktop */
+  header nav > div > div:first-of-type {
+    background-color: transparent !important;
+  }
+}
+
 /* PrimeNG Button dans le header */
 ::ng-deep header .p-button-outlined {
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: transparent !important;
   color: white !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
   font-weight: 600 !important;
   border-radius: 0.75rem !important;
   transition: all 0.3s ease !important;
@@ -15,10 +38,10 @@
 
 ::ng-deep header .p-button-outlined:hover:not(:disabled) {
   background: white !important;
-  color: #1e293b !important;
+  color: #111827 !important;
   border-color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Mobile: Full width */
