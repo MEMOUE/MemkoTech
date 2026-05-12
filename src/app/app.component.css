@@ -4,9 +4,9 @@
 
 /* PrimeNG Button dans le header */
 ::ng-deep header .p-button-outlined {
-  background: transparent !important;
+  background: rgba(255, 255, 255, 0.08) !important;
   color: white !important;
-  border: 2px solid white !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
   font-weight: 600 !important;
   border-radius: 0.75rem !important;
   transition: all 0.3s ease !important;
@@ -15,9 +15,10 @@
 
 ::ng-deep header .p-button-outlined:hover:not(:disabled) {
   background: white !important;
-  color: #2563eb !important;
+  color: #1e293b !important;
+  border-color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Mobile: Full width */

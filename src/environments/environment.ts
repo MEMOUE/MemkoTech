@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
+  apiUrl: 'http://localhost:8000',  // ← URL du backend Django en dev
   emailJS: {
     serviceID: 'service_qwm066g',
     templateID: 'template_tap28lk',
