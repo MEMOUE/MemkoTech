@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MemkoTech": {
+    "Anafa": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "MemkoTech:build:production"
+              "buildTarget": "Anafa:build:production"
             },
             "development": {
-              "buildTarget": "MemkoTech:build:development"
+              "buildTarget": "Anafa:build:development"
             }
           },
           "defaultConfiguration": "development"

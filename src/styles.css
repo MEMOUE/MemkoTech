@@ -187,6 +187,61 @@
 }
 
 /* ============================= */
+/* Boutons PrimeNG — style global cohérent sur TOUTES les pages */
+/* (auparavant le style dégradé n'existait que sur l'accueil) */
+:root {
+  --anafa-blue: #2563eb;
+  --anafa-blue-dark: #1d4ed8;
+}
+
+.p-button {
+  font-weight: 600 !important;
+  border-radius: 0.75rem !important;
+  padding: 0.875rem 1.75rem !important;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  border: none !important;
+  color: #fff !important;
+  transition: all 0.3s ease !important;
+}
+
+.p-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3) !important;
+}
+
+.p-button.p-button-lg {
+  padding: 1rem 2rem !important;
+  font-size: 1.125rem !important;
+}
+
+.p-button .p-button-label,
+.p-button .p-button-icon {
+  color: inherit !important;
+}
+
+/* Variante "outlined" — utilisée sur les fonds sombres (héros, CTA) */
+.p-button.p-button-outlined {
+  background: transparent !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+.p-button.p-button-outlined:hover:not(:disabled) {
+  background: #fff !important;
+  color: #1d4ed8 !important;
+  border-color: #fff !important;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 640px) {
+  .p-button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ============================= */
 /* Print styles */
 @media print {
   .no-print {

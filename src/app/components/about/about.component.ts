@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { TimelineModule } from 'primeng/timeline';
+import { PartnersComponent } from '../partners/partners.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterLink, ButtonModule, CardModule, TimelineModule],
+  imports: [CommonModule, RouterLink, ButtonModule, CardModule, TimelineModule, PartnersComponent],
   templateUrl: './about.component.html'
   ,
   styleUrls: ['./about.component.css']
@@ -16,7 +17,7 @@ import { TimelineModule } from 'primeng/timeline';
 export class AboutComponent {
   timelineEvents = [
     {
-      title: 'Création de MemkoTech',
+      title: 'Création de Anafa',
       date: '2019',
       description: 'Lancement de l\'entreprise avec un développeur passionnés.',
       icon: 'pi pi-flag',

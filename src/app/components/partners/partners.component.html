@@ -1,0 +1,37 @@
+<section class="py-16 md:py-24"
+         [class.bg-white]="variant === 'light'"
+         [class.bg-dark-50]="variant === 'muted'">
+  <div class="container-custom">
+    <!-- En-tête -->
+    <div class="text-center mb-12 space-y-3">
+      <span class="inline-block text-sm font-semibold tracking-widest uppercase text-primary-600">
+        Partenaires &amp; Clients
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold text-dark-900">{{ title }}</h2>
+      <p class="text-dark-500 max-w-2xl mx-auto">{{ subtitle }}</p>
+    </div>
+
+    <!-- Bandeau défilant (logos cliquables) -->
+    <div class="partners-marquee relative overflow-hidden"
+         style="-webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+                mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);">
+      <div class="partners-track flex items-center gap-6 md:gap-10 w-max">
+        @for (partner of marquee; track $index) {
+          <a [href]="partner.url"
+             target="_blank"
+             rel="noopener noreferrer"
+             [attr.aria-label]="partner.name"
+             [title]="partner.name"
+             class="group shrink-0">
+            <div class="flex items-center justify-center h-28 w-44 md:h-32 md:w-56 bg-white rounded-2xl border border-dark-100 shadow-sm transition-all duration-300 group-hover:shadow-xl-blue group-hover:-translate-y-1 group-hover:border-primary-200">
+              <img [src]="partner.logo"
+                   [alt]="partner.name"
+                   loading="lazy"
+                   class="max-h-20 md:max-h-24 max-w-[80%] object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" />
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>

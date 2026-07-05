@@ -141,121 +141,9 @@
 }
 
 /* ============================================
-   PRIMENG INPUTS CUSTOMIZATION
-   ============================================ */
-::ng-deep .p-inputtext,
-::ng-deep .p-inputtextarea,
-::ng-deep .p-dropdown {
-  width: 100% !important;
-  padding: 0.75rem 1rem !important;
-  border-radius: 0.75rem !important;
-  border: 2px solid #e5e7eb !important;
-  transition: all 0.2s ease !important;
-  font-size: 1rem !important;
-  background: white !important;
-  color: #1f2937 !important; /* Gris foncé visible */
-}
-
-::ng-deep .p-inputtext::placeholder,
-::ng-deep .p-inputtextarea::placeholder {
-  color: #9ca3af !important; /* Gris moyen pour placeholder */
-}
-
-::ng-deep .p-inputtext:enabled:hover,
-::ng-deep .p-inputtextarea:enabled:hover,
-::ng-deep .p-dropdown:not(.p-disabled):hover {
-  border-color: #cbd5e1 !important;
-}
-
-::ng-deep .p-inputtext:enabled:focus,
-::ng-deep .p-inputtextarea:enabled:focus,
-::ng-deep .p-dropdown:not(.p-disabled).p-focus {
-  border-color: #2563eb !important;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
-  outline: none !important;
-}
-
-::ng-deep .p-inputtext.ng-invalid.ng-dirty,
-::ng-deep .p-inputtextarea.ng-invalid.ng-dirty,
-::ng-deep .p-dropdown.ng-invalid.ng-dirty {
-  border-color: #ef4444 !important;
-  background: #fef2f2 !important;
-}
-
-::ng-deep .p-inputtextarea {
-  min-height: 120px !important;
-  resize: vertical !important;
-  font-family: inherit !important;
-}
-
-::ng-deep .p-dropdown .p-dropdown-label {
-  padding: 0.75rem 1rem !important;
-  color: #1f2937 !important; /* Gris foncé visible */
-}
-
-::ng-deep .p-dropdown .p-dropdown-label.p-placeholder {
-  color: #9ca3af !important; /* Gris moyen pour placeholder */
-}
-
-/* ============================================
-   PRIMENG DROPDOWN PANEL
-   ============================================ */
-::ng-deep .p-dropdown-panel {
-  border-radius: 0.75rem !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-  border: 1px solid #e5e7eb !important;
-  margin-top: 0.5rem !important;
-  background: white !important;
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
-  padding: 0.75rem 1rem !important;
-  border-radius: 0.5rem !important;
-  margin: 0.25rem 0.5rem !important;
-  color: #1f2937 !important; /* Gris foncé visible */
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item * {
-  color: inherit !important; /* Hériter la couleur pour tous les enfants */
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item .text-gray-500 {
-  color: #6b7280 !important; /* Gris moyen pour les descriptions */
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
-  background: #eff6ff !important;
-  color: #1d4ed8 !important;
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover * {
-  color: inherit !important;
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
-  background: #dbeafe !important;
-  color: #1e40af !important;
-}
-
-::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight * {
-  color: inherit !important;
-}
-
-/* ============================================
-   PRIMENG DIVIDER
-   ============================================ */
-::ng-deep .p-divider.p-divider-horizontal {
-  margin: 2rem 0 !important;
-}
-
-::ng-deep .p-divider.p-divider-horizontal:before {
-  border-top: 1px solid #e5e7eb !important;
-}
-
-/* ============================================
    PRIMENG ACCORDION
    ============================================ */
-::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+::ng-deep .p-accordion .p-accordionheader {
   padding: 1rem 1.25rem !important;
   border-radius: 0.75rem !important;
   background: #f9fafb !important;
@@ -265,19 +153,20 @@
   color: #1f2937 !important;
 }
 
-::ng-deep .p-accordion .p-accordion-header:not(.p-disabled) .p-accordion-header-link:hover {
+::ng-deep .p-accordion .p-accordionheader:hover {
   background: #eff6ff !important;
   border-color: #bfdbfe !important;
   color: #1d4ed8 !important;
 }
 
-::ng-deep .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link {
+::ng-deep .p-accordion .p-accordionheader[aria-expanded="true"] {
   background: #dbeafe !important;
   border-color: #93c5fd !important;
   color: #1e40af !important;
+  border-radius: 0.75rem 0.75rem 0 0 !important;
 }
 
-::ng-deep .p-accordion .p-accordion-content {
+::ng-deep .p-accordion .p-accordioncontent-content {
   padding: 1.25rem !important;
   border: 1px solid #e5e7eb !important;
   border-top: none !important;
@@ -343,34 +232,11 @@
 }
 
 /* ============================================
-   FORM VALIDATION
-   ============================================ */
-.p-error {
-  color: #ef4444;
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: block;
-  margin-top: 0.25rem;
-}
-
-/* ============================================
    ACCESSIBILITY
    ============================================ */
-::ng-deep .p-button:focus-visible,
-::ng-deep .p-inputtext:focus-visible,
-::ng-deep .p-dropdown:focus-visible,
-::ng-deep .p-inputtextarea:focus-visible {
+::ng-deep .p-button:focus-visible {
   outline: 3px solid rgba(37, 99, 235, 0.5) !important;
   outline-offset: 2px !important;
-}
-
-/* High contrast mode */
-@media (prefers-contrast: high) {
-  ::ng-deep .p-inputtext,
-  ::ng-deep .p-dropdown,
-  ::ng-deep .p-inputtextarea {
-    border: 2px solid #1f2937 !important;
-  }
 }
 
 /* Reduced motion */

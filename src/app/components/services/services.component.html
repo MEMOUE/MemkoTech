@@ -197,24 +197,117 @@
       </div>
 
       <!-- Infrastructure Tab -->
-      <div *ngIf="activeTab === 'infrastructure'" class="text-center py-12">
-        <i class="pi pi-cloud text-6xl text-blue-600 mb-4"></i>
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Infrastructure Cloud</h2>
-        <p class="text-gray-600">Contenu en construction...</p>
+      <div *ngIf="activeTab === 'infrastructure'" class="space-y-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Infrastructure Cloud & DevOps</h2>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+              Nous concevons et opérons des infrastructures cloud modernes, scalables et automatisées.
+              De la conteneurisation à l'Infrastructure as Code, nous garantissons performance,
+              haute disponibilité et maîtrise des coûts (FinOps).
+            </p>
+
+            <div class="space-y-4">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800">Technologies & Outils</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div *ngFor="let tech of cloudTechnologies"
+                     class="bg-gray-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-blue-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-blue-500
+                            min-h-[90px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-2xl sm:text-3xl mb-2"></i>
+                  <span class="font-medium text-xs sm:text-sm">{{ tech.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl h-fit border border-blue-200">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-6">Ce que nous offrons</h3>
+            <ul class="space-y-4">
+              <li *ngFor="let item of infrastructureOffers" class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Security Tab -->
-      <div *ngIf="activeTab === 'security'" class="text-center py-12">
-        <i class="pi pi-shield text-6xl text-blue-600 mb-4"></i>
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Cybersécurité</h2>
-        <p class="text-gray-600">Contenu en construction...</p>
+      <div *ngIf="activeTab === 'security'" class="space-y-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Cybersécurité & DevSecOps</h2>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+              Face à des menaces toujours plus sophistiquées, nous protégeons vos systèmes et vos données
+              avec une approche Zero Trust. Audits, tests d'intrusion, surveillance continue et mise en
+              conformité (RGPD, ISO 27001) pour une sécurité de bout en bout.
+            </p>
+
+            <div class="space-y-4">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800">Domaines d'expertise</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div *ngFor="let tech of securityTechnologies"
+                     class="bg-gray-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-blue-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-blue-500
+                            min-h-[90px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-2xl sm:text-3xl mb-2"></i>
+                  <span class="font-medium text-xs sm:text-sm">{{ tech.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl h-fit border border-blue-200">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-6">Ce que nous offrons</h3>
+            <ul class="space-y-4">
+              <li *ngFor="let item of securityOffers" class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Maintenance Tab -->
-      <div *ngIf="activeTab === 'maintenance'" class="text-center py-12">
-        <i class="pi pi-cog text-6xl text-blue-600 mb-4"></i>
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Maintenance & Support</h2>
-        <p class="text-gray-600">Contenu en construction...</p>
+      <div *ngIf="activeTab === 'maintenance'" class="space-y-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-8">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Maintenance & Support</h2>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+              Nous assurons la disponibilité et la pérennité de vos applications grâce à une supervision
+              proactive 24/7, une tierce maintenance applicative (TMA) et des contrats de service (SLA)
+              garantis. Votre système reste performant, sécurisé et à jour en permanence.
+            </p>
+
+            <div class="space-y-4">
+              <h3 class="text-xl sm:text-2xl font-semibold text-gray-800">Nos prestations</h3>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <div *ngFor="let tech of maintenanceTechnologies"
+                     class="bg-gray-50 p-4 rounded-xl text-center transition-all duration-300
+                            hover:bg-blue-600 hover:text-white hover:-translate-y-1 hover:shadow-lg
+                            border-2 border-transparent hover:border-blue-500
+                            min-h-[90px] flex flex-col items-center justify-center">
+                  <i [class]="tech.icon" class="text-2xl sm:text-3xl mb-2"></i>
+                  <span class="font-medium text-xs sm:text-sm">{{ tech.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl h-fit border border-blue-200">
+            <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-6">Ce que nous offrons</h3>
+            <ul class="space-y-4">
+              <li *ngFor="let item of maintenanceOffers" class="flex items-start text-gray-700">
+                <i class="pi pi-check-circle text-green-600 mt-1 mr-3 flex-shrink-0 text-lg"></i>
+                <span class="text-sm sm:text-base">{{ item }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

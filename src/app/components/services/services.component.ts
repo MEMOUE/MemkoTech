@@ -43,6 +43,72 @@ export class ServicesComponent {
     { name: 'Android Native', icon: 'pi pi-android' },
   ];
 
+  // ---- Infrastructure Cloud & DevOps ----
+  cloudTechnologies = [
+    { name: 'AWS', icon: 'pi pi-amazon' },
+    { name: 'Microsoft Azure', icon: 'pi pi-microsoft' },
+    { name: 'Google Cloud', icon: 'pi pi-google' },
+    { name: 'Docker', icon: 'pi pi-box' },
+    { name: 'Kubernetes', icon: 'pi pi-sitemap' },
+    { name: 'Terraform (IaC)', icon: 'pi pi-server' },
+    { name: 'CI/CD', icon: 'pi pi-sync' },
+    { name: 'Monitoring', icon: 'pi pi-chart-line' },
+  ];
+
+  infrastructureOffers = [
+    'Architecture cloud scalable & haute disponibilité',
+    'Conteneurisation (Docker, Kubernetes)',
+    'Infrastructure as Code (Terraform, Ansible)',
+    'Pipelines CI/CD automatisés',
+    'Monitoring & observabilité (Prometheus, Grafana)',
+    'Migration vers le cloud',
+    'Optimisation des coûts (FinOps)',
+  ];
+
+  // ---- Cybersécurité & DevSecOps ----
+  securityTechnologies = [
+    { name: 'Tests d\'intrusion', icon: 'pi pi-search' },
+    { name: 'SIEM / SOC', icon: 'pi pi-desktop' },
+    { name: 'Zero Trust', icon: 'pi pi-lock' },
+    { name: 'IAM / MFA', icon: 'pi pi-id-card' },
+    { name: 'Chiffrement', icon: 'pi pi-key' },
+    { name: 'Pare-feu / WAF', icon: 'pi pi-shield' },
+    { name: 'EDR / XDR', icon: 'pi pi-eye' },
+    { name: 'Conformité RGPD', icon: 'pi pi-verified' },
+  ];
+
+  securityOffers = [
+    'Audit de sécurité & tests d\'intrusion (pentest)',
+    'Sécurisation des applications (DevSecOps)',
+    'Protection des données & conformité RGPD',
+    'Gestion des identités et des accès (IAM/MFA)',
+    'Surveillance continue 24/7 (SOC)',
+    'Réponse aux incidents & remédiation',
+    'Sensibilisation et formation des équipes',
+  ];
+
+  // ---- Maintenance & Support ----
+  maintenanceTechnologies = [
+    { name: 'Supervision 24/7', icon: 'pi pi-desktop' },
+    { name: 'TMA', icon: 'pi pi-wrench' },
+    { name: 'Sauvegardes / PRA', icon: 'pi pi-database' },
+    { name: 'Mises à jour', icon: 'pi pi-refresh' },
+    { name: 'Helpdesk', icon: 'pi pi-headphones' },
+    { name: 'SLA garantis', icon: 'pi pi-clock' },
+    { name: 'Optimisation', icon: 'pi pi-bolt' },
+    { name: 'Reporting', icon: 'pi pi-chart-bar' },
+  ];
+
+  maintenanceOffers = [
+    'Maintenance corrective & évolutive (TMA)',
+    'Supervision proactive 24/7',
+    'Sauvegardes & plan de reprise d\'activité (PRA)',
+    'Mises à jour de sécurité régulières',
+    'Optimisation continue des performances',
+    'Support multi-niveaux (helpdesk)',
+    'Contrats de service (SLA) garantis',
+  ];
+
   processSteps = [
     {
       title: 'Analyse & Audit',
